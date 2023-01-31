@@ -1,6 +1,8 @@
 @red: #C3002F;
 @white: #ffffff;
-@dark-red: #C10933;
+@dark-red: #8F0526;
+@grey: #EFEFEF;
+@dark-grey: #707070;
 
 h1,
 h2,
@@ -10,6 +12,10 @@ h5,
 h6,
 p {
     margin: 0;
+}
+
+h2 {
+    font-size: 100px;
 }
 
 ul {
@@ -37,6 +43,7 @@ body {
     margin: 0;
     font-size: 16px;
     overflow-x: hidden;
+    background-color: @grey;
 
     #page {
         position: relative;
@@ -51,6 +58,10 @@ body {
 
 .bg-red {
     background-color: @red;
+}
+
+.bg-dark-red {
+    background-color: @dark-red;
 }
 
 .btn {

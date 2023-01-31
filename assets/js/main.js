@@ -1,4 +1,4 @@
-jQuery(document).ready(function($) {
+jQuery(document).ready(function ($) {
     var fancy_settings = {
         groupAll: true,
         Toolbar: {
@@ -46,11 +46,20 @@ jQuery(document).ready(function($) {
                     this.fancybox.close();
                 }
             }
-        }        
+        }
     });
 
     Fancybox.bind(".gallery-type-1 a", fancy_settings);
     Fancybox.bind(".gallery-type-2 a", fancy_settings);
 
+
+
+    $('.slick-slider').slick({
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        dots: true,
+        infinite: false,
+    });
 
 });
