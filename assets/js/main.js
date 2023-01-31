@@ -62,4 +62,9 @@ jQuery(document).ready(function ($) {
         infinite: false,
     });
 
+    $(".block-wrapp").hover(function(){
+        $(".hover-block-wrapp").slideUp();
+        
+      });
+
 });
