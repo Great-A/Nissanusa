@@ -62,9 +62,18 @@ jQuery(document).ready(function ($) {
         infinite: false,
     });
 
-    $(".block-wrapp").hover(function(){
-        $(".hover-block-wrapp").slideUp();
-        
-      });
 
+    $(".block-wrapp, .chevron-elem").hover(
+        function () {
+            $(this).find(".hover-block-wrapp").fadeIn();
+            $(this).find(".hover-block-wrapp").animate({ top: "0" }, 200);
+            $(this).find("#employee-focus .block-title .title-h3").addClass('d-none');
+        },
+        function () {
+            $(this).find(".hover-block-wrapp").fadeOut();
+            $(this).find(".hover-block-wrapp").animate({ top: "50px" }, 200);
+            $(this).find("#employee-focus .block-title .title-h3").removeClass('d-none');
+        }
+    );
+    
 });

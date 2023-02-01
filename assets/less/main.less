@@ -117,6 +117,14 @@
     .block-container {
         display: flex;
         flex-direction: column;
+
+        &:hover {
+
+            .block-title {
+                display: none;
+            }
+
+        }
     }
 
     .image-wrapper {
@@ -218,7 +226,7 @@
     .slick-list {
         border-radius: 25px;
     }
-    
+
     .slick-prev,
     .slick-next {
         &::before {
@@ -247,6 +255,7 @@
         li {
             width: 80px;
             height: 10px;
+
             button {
                 &::before {
                     content: '';
@@ -265,9 +274,9 @@
                 }
             }
         }
-        
-        
-    } 
+
+
+    }
 
     .slide {
         padding: 100px 50px 50px;
@@ -316,15 +325,27 @@
 #employee-focus {
     padding: 150px 0;
 
-    .block-wrapp {
+    .block-container {
         position: relative;
+        &:hover .chevron-elem {
+            transform: rotate(3.142rad);
+        }
     }
+
+    .block-overlay-hidden {
+        position: relative;
+        overflow: hidden;
+
+       
+    }
+
 
     h2 {
         text-align: center;
         color: @grey-2;
         margin-bottom: 20px;
     }
+
     .block-img {
         img {
             height: 400px;
@@ -339,13 +360,69 @@
         padding: 50px 0 20px;
         width: 100%;
         text-align: center;
-        background: linear-gradient(#ffffff85 30%, #ffffff 80% );
+        background: linear-gradient(#ffffff85 30%, #ffffff 80%);
         border-radius: 0 0 25px 25px;
+
         .title-h3 {
             color: @grey-2;
         }
     }
 
+    .hover-block-wrapp {
+        display: none;
+        position: absolute;
+        top: 50px;
+        background: #ffffffd9;
+        border-radius: 25px;
+        height: 100%;
+        padding: 50px;
+        pointer-events: none;
 
-    
+        .title-h3 {
+            font-size: 35px;
+            text-align: center;
+        }
+
+        .hover-block-content {
+            ul {
+                font-size: 20px;
+                margin-bottom: 20px;
+
+                li {
+                    position: relative;
+                    margin-left: 10px;
+
+                    &::before {
+                        content: '';
+                        display: block;
+                        position: absolute;
+                        left: -15px;
+                        top: 10px;
+                        height: 4px;
+                        width: 4px;
+                        border-radius: 50%;
+                        background-color: @red;
+                    }
+                }
+            }
+        }
+    }
+
+    .chevron-elem {
+        background-image: url('../img/chevron-up.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        position: absolute;
+        bottom: -15px;
+        left: 45%;
+        height: 30px;
+        width: 30px;
+        background-color: @red;
+        border-radius: 50%;
+        z-index: 3;
+
+        &:hover {
+            transform: rotate(3.142rad);
+        }
+    }
 }

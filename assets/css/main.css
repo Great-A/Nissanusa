@@ -67,6 +67,9 @@ body #page {
 .d-flex {
   display: flex;
 }
+.d-none {
+  display: none;
+}
 .align-items-center {
   align-items: center;
 }
@@ -172,6 +175,9 @@ body #page {
 #manufacturing .block-container {
   display: flex;
   flex-direction: column;
+}
+#manufacturing .block-container:hover .block-title {
+  display: none;
 }
 #manufacturing .image-wrapper img {
   object-fit: cover;
@@ -317,8 +323,15 @@ body #page {
 #employee-focus {
   padding: 150px 0;
 }
-#employee-focus .block-wrapp {
+#employee-focus .block-container {
   position: relative;
+}
+#employee-focus .block-container:hover .chevron-elem {
+  transform: rotate(3.142rad);
+}
+#employee-focus .block-overlay-hidden {
+  position: relative;
+  overflow: hidden;
 }
 #employee-focus h2 {
   text-align: center;
@@ -341,4 +354,53 @@ body #page {
 }
 #employee-focus .block-title .title-h3 {
   color: #343434;
+}
+#employee-focus .hover-block-wrapp {
+  display: none;
+  position: absolute;
+  top: 50px;
+  background: #ffffffd9;
+  border-radius: 25px;
+  height: 100%;
+  padding: 50px;
+  pointer-events: none;
+}
+#employee-focus .hover-block-wrapp .title-h3 {
+  font-size: 35px;
+  text-align: center;
+}
+#employee-focus .hover-block-wrapp .hover-block-content ul {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+#employee-focus .hover-block-wrapp .hover-block-content ul li {
+  position: relative;
+  margin-left: 10px;
+}
+#employee-focus .hover-block-wrapp .hover-block-content ul li::before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: -15px;
+  top: 10px;
+  height: 4px;
+  width: 4px;
+  border-radius: 50%;
+  background-color: #C3002F;
+}
+#employee-focus .chevron-elem {
+  background-image: url('../img/chevron-up.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  bottom: -15px;
+  left: 45%;
+  height: 30px;
+  width: 30px;
+  background-color: #C3002F;
+  border-radius: 50%;
+  z-index: 3;
+}
+#employee-focus .chevron-elem:hover {
+  transform: rotate(3.142rad);
 }

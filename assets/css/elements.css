@@ -67,6 +67,9 @@ body #page {
 .d-flex {
   display: flex;
 }
+.d-none {
+  display: none;
+}
 .align-items-center {
   align-items: center;
 }
