@@ -42,9 +42,13 @@ a {
 
 body {
     margin: 0;
-    font-size: 16px;
+    font-family: 'NissanPro';
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 27px;
     overflow-x: hidden;
     background-color: @grey;
+    color: @grey-2;
 
     #page {
         position: relative;
@@ -52,9 +56,24 @@ body {
     }
 }
 
+.container {
+    max-width: 1284px;
+}
+
+.container-small {
+    max-width: 670px;
+}
+
 .h2 {
-    font-size: 30px;
+    font-size: 32px;
+    line-height: 43px;
     font-weight: 700;
+}
+
+.h2-custom {
+    color: @white;
+    font-size: 40px;
+    line-height: 53px;
 }
 
 .bg-red {
@@ -74,9 +93,6 @@ body {
         content: '>';
         position: absolute;
         right: -15px;
-        // background-image: url('>');
-        // background-repeat: no-repeat;
-        // background-size: contain;
     }
 }
 
@@ -115,4 +131,12 @@ body {
 
 .text-uppercase {
     text-transform: uppercase;
+}
+
+.link {
+    color: @red;
+    text-transform: capitalize;
+    &:hover {
+        color: @dark-red;
+    }
 }

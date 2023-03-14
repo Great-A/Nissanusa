@@ -29,17 +29,33 @@ a {
 }
 body {
   margin: 0;
-  font-size: 16px;
+  font-family: 'NissanPro';
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 27px;
   overflow-x: hidden;
   background-color: #EFEFEF;
+  color: #343434;
 }
 body #page {
   position: relative;
   overflow: hidden;
 }
+.container {
+  max-width: 1284px;
+}
+.container-small {
+  max-width: 670px;
+}
 .h2 {
-  font-size: 30px;
+  font-size: 32px;
+  line-height: 43px;
   font-weight: 700;
+}
+.h2-custom {
+  color: #ffffff;
+  font-size: 40px;
+  line-height: 53px;
 }
 .bg-red {
   background-color: #C3002F;
@@ -84,6 +100,13 @@ body #page {
 }
 .text-uppercase {
   text-transform: uppercase;
+}
+.link {
+  color: #C3002F;
+  text-transform: capitalize;
+}
+.link:hover {
+  color: #8F0526;
 }
 :root {
   --fancybox-thumbs-width: 50px;
@@ -133,6 +156,10 @@ body #page {
 }
 .hero-section {
   position: relative;
+  background-image: url('../img/hero-banner.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 .hero-section .overlay {
   position: absolute;
@@ -142,12 +169,13 @@ body #page {
   height: 100%;
   z-index: 0;
 }
-.hero-section .overlay-video {
+.hero-section .dark-layear {
   z-index: 1;
   overflow: hidden;
 }
-.hero-section .overlay-video::after {
-  background-color: rgba(0, 0, 0, 0.4);
+.hero-section .dark-layear::after {
+  background-color: #343434;
+  opacity: 54%;
   content: "";
   height: 100%;
   left: 0;
@@ -157,24 +185,36 @@ body #page {
   z-index: 1;
 }
 .hero-section .container {
-  height: 100vh;
+  padding: 157px 0 149px;
   z-index: 2;
   position: relative;
 }
 .hero-section .hero-content {
   color: #ffffff;
+  max-width: 588px;
+  text-align: center;
 }
 .hero-section .hero-content h1 {
-  font-size: 45px;
-  font-weight: 700;
+  font-size: 70px;
+  font-weight: bold;
+  line-height: 94px;
 }
 #manufacturing {
-  background: linear-gradient(#C3002F 30%, #8F0526 30%, #8F0526 80%, #C3002F 80%);
-  padding: 50px 0;
+  background: linear-gradient(#C3002F 50%, #8F0526 50%);
+  padding: 68px 0 87px;
+}
+#manufacturing .container-small {
+  margin-bottom: 55px;
+  color: #ffffff;
+}
+#manufacturing .blocks-wrapper {
+  gap: 36px;
+  padding: 0 12px;
 }
 #manufacturing .block-container {
   display: flex;
   flex-direction: column;
+  padding: 0;
 }
 #manufacturing .block-container:hover .block-title {
   display: none;
@@ -182,23 +222,51 @@ body #page {
 #manufacturing .image-wrapper img {
   object-fit: cover;
   width: 100%;
-  border-radius: 25px 25px 0 0;
+  border-radius: 30px 30px 0 0;
   height: 240px;
 }
 #manufacturing .content-wrapper {
   height: 100%;
   flex-direction: column;
   background-color: #ffffff;
-  padding: 20px;
-  border-radius: 0 0 25px 25px;
+  padding: 30px 45px 35px;
+  border-radius: 0 0 30px 30px;
   display: flex;
   justify-content: space-between;
 }
 #manufacturing .content-wrapper .content-block .h2 {
-  margin-bottom: 20px;
+  margin-bottom: 13px;
 }
 #manufacturing .content-wrapper .content-block .content {
-  margin-bottom: 20px;
+  margin-bottom: 5px;
+}
+#manufacturing .link {
+  position: relative;
+  font-weight: 500;
+  font-size: 16px;
+  padding-right: 25px;
+}
+#manufacturing .link:before {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translate(0, -50%);
+  width: 9px;
+  height: 14px;
+  background-image: url('../img/arrow-right.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+#manufacturing .link:hover:before {
+  background-image: url('../img/arrow-right-hover.svg');
+}
+#location-explore {
+  background-image: url('../img/location-explore.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding: 120px 0 500px;
 }
 .section-round-img .title-img-wrapp {
   padding-top: 50px;
