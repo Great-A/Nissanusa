@@ -55,23 +55,27 @@ jQuery(document).ready(function ($) {
 
 
     $('.slick-slider').slick({
-        infinite: true,
-        slidesToShow: 1,
-        slidesToScroll: 1,
         dots: true,
-        infinite: false,
+        responsive: [
+            {
+              breakpoint: 768,
+              settings: {
+                dots: false,
+              }
+            }
+          ]
     });
 
 
-    $(".block-wrapp, .chevron-elem").hover(
+    $(".block-overlay-hidden, .chevron-elem").hover(
         function () {
             $(this).find(".hover-block-wrapp").fadeIn();
-            $(this).find(".hover-block-wrapp").animate({ top: "0" }, 200);
+            $(this).find(".hover-block-wrapp").animate({ top: "0" }, 50);
             $(this).find("#employee-focus .block-title .title-h3").addClass('d-none');
         },
         function () {
             $(this).find(".hover-block-wrapp").fadeOut();
-            $(this).find(".hover-block-wrapp").animate({ top: "50px" }, 200);
+            $(this).find(".hover-block-wrapp").animate({ top: "350px" }, 50);
             $(this).find("#employee-focus .block-title .title-h3").removeClass('d-none');
         }
     );

@@ -107,7 +107,7 @@
 
     .hero-content {
         color: @white;
-        max-width: 588px;
+        max-width: 615px;
         text-align: center;
 
         h1 {
@@ -141,7 +141,6 @@
             .block-title {
                 display: none;
             }
-
         }
     }
 
@@ -165,7 +164,7 @@
         justify-content: space-between;
 
         .content-block {
-            .h2 {
+            .h4-custom {
                 margin-bottom: 13px;
             }
 
@@ -181,24 +180,24 @@
         font-size: 16px;
         padding-right: 25px;
 
-            &:before {
-                content: '';
-                position: absolute;
-                right: 0;
-                top: 50%;
-                transform: translate(0,-50%);
-                width: 9px;
-                height: 14px;
-                background-image: url('../img/arrow-right.svg');
-                background-repeat: no-repeat;
-                background-position: center;
-            }
+        &:before {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translate(0, -50%);
+            width: 9px;
+            height: 14px;
+            background-image: url('../img/arrow-right.svg');
+            background-repeat: no-repeat;
+            background-position: center;
+        }
 
-            &:hover {
-                &:before {
-                        background-image: url('../img/arrow-right-hover.svg');
-                }
+        &:hover {
+            &:before {
+                background-image: url('../img/arrow-right-hover.svg');
             }
+        }
     }
 }
 
@@ -210,90 +209,124 @@
     padding: 120px 0 500px;
 }
 
-.section-round-img {
-    .title-img-wrapp {
-        padding-top: 50px;
-    }
+.loc-exp-container {
+    max-width: 615px;
+    text-align: center;
 
-    .title-img-container {
-        background-image: url('../img/nissan-test.jpg');
-        background-repeat: no-repeat;
-        background-position: center;
-        padding-top: 400px;
-    }
-
-    .h2-title-img {
-        text-transform: uppercase;
-        font-size: 320px;
+    .title-nissan {
+        font-size: 27px;
         font-weight: 700;
-        color: @white;
-        opacity: 0.5;
-        line-height: 0.68;
+        line-height: 40px;
     }
 
-    .container-img-round {
-        position: relative;
-
-        h2 {
-            color: @red;
-            font-weight: 700;
-        }
-    }
-
-    .content-img-round {
-        padding: 100px 0;
-    }
-
-    .img-round {
-        border: 20px solid @dark-grey;
-        border-radius: 50%;
-        -moz-border-radius: 50%;
-        -webkit-border-radius: 50%;
-        height: 700px;
-        width: 700px;
-        object-fit: cover;
-    }
-
-    .img-round-wrapp {
-        position: absolute;
-        right: -90px;
-        top: -200px;
-        border: 80px solid #70707031;
-        border-radius: 50%;
-        -moz-border-radius: 50%;
-        -webkit-border-radius: 50%;
+    .title-state {
+        font-size: 41px;
+        font-weight: 700;
+        font-weight: 40px;
+        text-transform: uppercase;
+        margin-bottom: 26px;
     }
 }
 
+.location-explore-wrapper {
+    width: 612px;
+    background-color: @white;
+    border-radius: 30px;
+    padding: 18px 50px 0;
+
+    .custom-h4 {
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 18px;
+        color: @dark-red;
+        margin-bottom: 7px;
+    }
+
+    .title-top {
+        font-size: 32px;
+        line-height: 41px;
+        font-weight: 700;
+        transition: font-size 0.5s;
+    }
+
+    .title-bottom {
+        font-size: 16px;
+        line-height: 20px;
+        text-transform: uppercase;
+    }
+
+    .location-block {
+        padding-bottom: 18px;
+
+        &:hover {
+            padding: 0 2px 14px;
+
+            .title-top {
+                font-size: 36px;
+                transition: all 0.5s;
+                line-height: 46px;
+                color: @red;
+            }
+
+            .title-bottom {
+                color: @red;
+            }
+        }
+    }
+}
 
 .section-slider {
     color: @white;
-    padding: 100px 0;
+    padding: 130px 0 140px;
 
     .container {
-        max-width: 1000px;
-
+        max-width: 855px;
     }
 
     .slick-list {
-        border-radius: 25px;
+        border-radius: 30px;
     }
 
     .slick-prev,
     .slick-next {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+
         &::before {
-            color: @red;
+            content: "";
+            position: absolute;
+            background-image: url('../img/arrow-white.svg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-color: @red;
+            width: 32px;
+            height: 32px;
+            font-size: 32px;
+            border-radius: 50%;
             opacity: 1;
         }
     }
 
     .slick-prev {
-        left: -15px;
+        left: -17px;
         z-index: 2;
+
+        &:before {
+            left: 0px;
+            top: 0;
+            transform: rotate(270deg);
+        }
     }
 
     .slick-next {
-        right: -15px;
+        right: -17px;
+
+        &:before {
+            right: 0px;
+            top: 0;
+            transform: rotate(90deg);
+        }
     }
 
     .slick-disabled {
@@ -303,6 +336,9 @@
     }
 
     .slick-dots {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
 
         li {
             width: 80px;
@@ -312,8 +348,8 @@
                 &::before {
                     content: '';
                     opacity: 1;
-                    border: 1px solid @dark-red;
-                    width: 80px;
+                    border: 1px solid @red;
+                    width: 87px;
                     height: 10px;
                 }
             }
@@ -321,25 +357,28 @@
             &.slick-active {
                 button {
                     &::before {
-                        background-color: @dark-red;
+                        background-color: @red;
                     }
                 }
             }
         }
-
-
     }
 
     .slide {
-        padding: 100px 50px 50px;
+        display: flex;
+        align-items: end;
+        justify-content: center;
+        padding: 266px 50px 55px;
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
-        border-radius: 25px;
+        border-radius: 30px;
+        height: 475px;
+        text-align: center;
 
         &::after {
             content: "";
-            background-color: rgba(0, 0, 0, 0.1);
+            background-color: rgba(0, 0, 0, 0.022);
             height: 100%;
             left: 0;
             position: absolute;
@@ -349,33 +388,134 @@
         }
 
         .slider-content {
-            max-width: 70%;
             position: relative;
             z-index: 2;
 
             h2 {
-                font-size: 65px;
-                line-height: 0.8;
-                margin-bottom: 20px;
+                font-family: 'NissanProSuper';
+                font-size: 100px;
+                line-height: 129px;
+            }
+
+            p {
+                font-family: 'NissanProSuper';
+                font-size: 28px;
+                line-height: 30px;
+                text-transform: uppercase;
             }
         }
     }
 
     .slide-1 {
-        background-image: url('../img/nissan-test.jpg');
+        padding: 290px 255px 45px 50px;
+        background-image: url('../img/slide-1.png');
+
+        .slider-content {
+
+            h2 {
+                font-size: 60px;
+                line-height: 60px;
+            }
+        }
     }
 
     .slide-2 {
-        background-image: url('../img/nissan-test.jpg');
+        background-image: url('../img/slide-2.png');
     }
 
     .slide-3 {
-        background-image: url('../img/nissan-test.jpg');
+        background-image: url('../img/slide-3.png');
+    }
+
+    .slide-4 {
+        background-image: url('../img/slide-4.png');
+    }
+
+    .slide-5 {
+        background-image: url('../img/slide-5.png');
+    }
+
+    .slide-6 {
+        background-image: url('../img/slide-5.png');
+    }
+}
+
+.section-round-img {
+    .title-img-wrapp {
+        padding-top: 24px;
+    }
+
+    .title-img-container {
+        position: relative;
+        height: 485px;
+        background-image: url('../img/banner-section-round.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+
+    }
+
+    .h2-title-img {
+        position: absolute;
+        bottom: 0;
+        left: -15px;
+        font-family: 'NissanProSuper';
+        text-transform: uppercase;
+        font-size: 260px;
+        line-height: 185px;
+        color: @white;
+        opacity: 39%;
+    }
+
+    .container-img-round {
+        position: relative;
+
+        .col-5 {
+            max-width: 540px;
+        }
+
+        p {
+            font-weight: 400;
+        }
+
+        p:not(:last-child) {
+            margin-bottom: 10px;
+        }
+    }
+
+    .content-img-round {
+        padding: 70px 0 130px;
+    }
+
+    .img-round {
+        border: 20px solid @grey-2;
+        border-radius: 50%;
+        -moz-border-radius: 50%;
+        -webkit-border-radius: 50%;
+        height: 610px;
+        width: 610px;
+        object-fit: cover;
+    }
+
+    .img-round-wrapp {
+        position: absolute;
+        right: -200px;
+        top: -200px;
+        border: 65px solid #70707031;
+        border-radius: 50%;
+        -moz-border-radius: 50%;
+        -webkit-border-radius: 50%;
     }
 }
 
 #employee-focus {
-    padding: 150px 0;
+    padding: 100px 0 115px;
+    background-color: @grey;
+
+    .h4-custom {
+        text-align: center;
+        margin-bottom: 27px;
+    }
 
     .block-container {
         position: relative;
@@ -387,9 +527,7 @@
 
     .block-overlay-hidden {
         position: relative;
-        overflow: hidden;
-
-
+        // overflow: hidden;
     }
 
 
@@ -399,22 +537,26 @@
         margin-bottom: 20px;
     }
 
+    .block-wrapp {
+        position: relative;
+    }
+
     .block-img {
         img {
-            height: 400px;
+            max-width: 288px;
+            height: 466px;
             object-fit: cover;
-            border-radius: 25px;
+            border-radius: 30px;
         }
     }
 
     .block-title {
         position: absolute;
-        bottom: 0;
-        padding: 50px 0 20px;
+        height: 55px;
+        bottom: 30px;
         width: 100%;
         text-align: center;
-        background: linear-gradient(#ffffff85 30%, #ffffff 80%);
-        border-radius: 0 0 25px 25px;
+        border-radius: 0 0 30px 30px;
 
         .title-h3 {
             color: @grey-2;
@@ -424,9 +566,9 @@
     .hover-block-wrapp {
         display: none;
         position: absolute;
-        top: 50px;
+        top: 350px;
         background: #ffffffd9;
-        border-radius: 25px;
+        border-radius: 30px;
         height: 100%;
         padding: 50px;
         pointer-events: none;
@@ -462,14 +604,14 @@
     }
 
     .chevron-elem {
-        background-image: url('../img/chevron-up.svg');
+        background-image: url('../img/arrow-white.svg');
         background-repeat: no-repeat;
         background-position: center;
         position: absolute;
         bottom: -15px;
         left: 45%;
-        height: 30px;
-        width: 30px;
+        height: 32px;
+        width: 32px;
         background-color: @red;
         border-radius: 50%;
         z-index: 3;

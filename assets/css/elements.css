@@ -30,15 +30,17 @@ a {
 body {
   margin: 0;
   font-family: 'NissanPro';
-  font-weight: 400;
+  font-weight: 500;
   font-size: 20px;
   line-height: 27px;
   overflow-x: hidden;
-  background-color: #EFEFEF;
   color: #343434;
 }
 body #page {
   position: relative;
+  overflow: hidden;
+}
+section {
   overflow: hidden;
 }
 .container {
@@ -56,6 +58,18 @@ body #page {
   color: #ffffff;
   font-size: 40px;
   line-height: 53px;
+}
+.h2-nissan {
+  font-size: 80px;
+  line-height: 102px;
+  color: #C3092F;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+.h4-custom {
+  font-size: 32px;
+  line-height: 43px;
+  font-weight: 700;
 }
 .bg-red {
   background-color: #C3002F;

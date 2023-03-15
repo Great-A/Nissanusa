@@ -1,4 +1,5 @@
 @red: #C3002F;
+@red-2: #C3092F;
 @white: #ffffff;
 @dark-red: #8F0526;
 @grey: #EFEFEF;
@@ -43,17 +44,20 @@ a {
 body {
     margin: 0;
     font-family: 'NissanPro';
-    font-weight: 400;
+    font-weight: 500;
     font-size: 20px;
     line-height: 27px;
     overflow-x: hidden;
-    background-color: @grey;
     color: @grey-2;
 
     #page {
         position: relative;
         overflow: hidden;
     }
+}
+
+section {
+    overflow: hidden;
 }
 
 .container {
@@ -74,6 +78,20 @@ body {
     color: @white;
     font-size: 40px;
     line-height: 53px;
+}
+
+.h2-nissan {
+    font-size: 80px;
+    line-height: 102px;
+    color: @red-2;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.h4-custom {
+    font-size: 32px;
+    line-height: 43px;
+    font-weight: 700;
 }
 
 .bg-red {

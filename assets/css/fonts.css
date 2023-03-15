@@ -1,5 +1,45 @@
 @font-face {
-    font-family: 'NissanPro';
+    font-family: NissanPro;
+    font-weight: 300;
+    font-style: normal;
+    src: url("../fonts/NissanProLight.otf") format("opentype");
+}
+
+@font-face {
+    font-family: NissanPro;
+    font-weight: 300;
+    font-style:italic;
+    src: url("../fonts/NissanProLightIta.otf") format("opentype");
+}
+
+@font-face {
+    font-family: NissanPro;
     font-weight: 400;
-    src: url("../fonts/NissanBrand-Regular.ttf") format("opentype");
+    font-style: normal;
+    src: url("../fonts/NissanProReg.otf") format("opentype");
+}
+
+@font-face {
+    font-family: NissanPro;
+    font-weight: 400;
+    font-style:italic;
+    src: url("../fonts/NissanProRegIta.otf") format("opentype");
+}
+
+@font-face {
+    font-family: NissanPro;
+    font-weight: 500;
+    font-style: normal;
+    src: url("../fonts/NissanProMedium.otf") format("opentype");
+}
+
+@font-face {
+    font-family: NissanPro;
+    font-weight: 700;
+    src: url("../fonts/NissanProBold.otf") format("opentype");
+}
+
+@font-face {
+    font-family: NissanProSuper;
+    src: url("../fonts/NissanProSuper.otf") format("opentype");
 }
