@@ -517,8 +517,19 @@
         margin-bottom: 27px;
     }
 
+    .blocks-row {
+        justify-content: space-between;
+    }
+
     .block-container {
         position: relative;
+        max-width: 312px;
+
+        .title-h3 {
+            font-size: 20px;
+            color: @grey-2;
+            text-align: center;
+        }
 
         &:hover .chevron-elem {
             transform: rotate(3.142rad);
@@ -543,7 +554,7 @@
 
     .block-img {
         img {
-            max-width: 288px;
+            width: 100%;
             height: 466px;
             object-fit: cover;
             border-radius: 30px;
@@ -557,33 +568,35 @@
         width: 100%;
         text-align: center;
         border-radius: 0 0 30px 30px;
-
-        .title-h3 {
-            color: @grey-2;
-        }
     }
 
     .hover-block-wrapp {
         display: none;
         position: absolute;
-        top: 350px;
+        top: 335px;
         background: #ffffffd9;
         border-radius: 30px;
         height: 100%;
-        padding: 50px;
+        padding: 45px 30px 40px;
         pointer-events: none;
 
         .title-h3 {
-            font-size: 35px;
-            text-align: center;
+            font-size: 24px;
+            margin-bottom: 25px;
         }
 
         .hover-block-content {
             ul {
+                display: flex;
+                flex-direction: column;
                 font-size: 20px;
                 margin-bottom: 20px;
+                gap: 10px;
+                margin-bottom: 30px;
 
                 li {
+                    line-height: 22px;
+                    font-weight: 400;
                     position: relative;
                     margin-left: 10px;
 
@@ -593,12 +606,18 @@
                         position: absolute;
                         left: -15px;
                         top: 10px;
-                        height: 4px;
-                        width: 4px;
+                        height: 5px;
+                        width: 5px;
                         border-radius: 50%;
                         background-color: @red;
                     }
                 }
+            }
+
+            p {
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 21px;
             }
         }
     }

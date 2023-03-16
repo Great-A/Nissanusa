@@ -58,26 +58,24 @@ jQuery(document).ready(function ($) {
         dots: true,
         responsive: [
             {
-              breakpoint: 768,
-              settings: {
-                dots: false,
-              }
+                breakpoint: 768,
+                settings: {
+                    dots: false,
+                }
             }
-          ]
+        ]
     });
 
 
     $(".block-overlay-hidden, .chevron-elem").hover(
         function () {
-            $(this).find(".hover-block-wrapp").fadeIn();
-            $(this).find(".hover-block-wrapp").animate({ top: "0" }, 50);
-            $(this).find("#employee-focus .block-title .title-h3").addClass('d-none');
+            $(this).find(".hover-block-wrapp").fadeToggle().animate({ top: "0" });
+            $(this).find(".block-title .title-h3").fadeToggle();
         },
         function () {
-            $(this).find(".hover-block-wrapp").fadeOut();
-            $(this).find(".hover-block-wrapp").animate({ top: "350px" }, 50);
-            $(this).find("#employee-focus .block-title .title-h3").removeClass('d-none');
+            $(this).find(".hover-block-wrapp").animate({ top: "335px" }).fadeToggle();
+            $(this).find(" .block-title .title-h3").fadeToggle();
         }
     );
-    
 });
+
