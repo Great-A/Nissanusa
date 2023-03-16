@@ -58,7 +58,7 @@ jQuery(document).ready(function ($) {
         dots: true,
         responsive: [
             {
-                breakpoint: 768,
+                breakpoint: 769,
                 settings: {
                     dots: false,
                 }
@@ -66,15 +66,24 @@ jQuery(document).ready(function ($) {
         ]
     });
 
+    $('.slick-slider-2').slick({
+        infinite: false,
+        dots: false,
+        arrow: false,
+        adaptiveHeight: true
+    });
 
-    $(".block-overlay-hidden, .chevron-elem").hover(
+
+    $(".block-overlay-hidden").hover(
         function () {
-            $(this).find(".hover-block-wrapp").fadeToggle().animate({ top: "0" });
-            $(this).find(".block-title .title-h3").fadeToggle();
+            $this= $(this);
+            $this.find(".hover-block-wrapp").fadeToggle(10).animate({ top: "0" });
+            $this.find(".block-title .title-h3").fadeToggle();
         },
         function () {
-            $(this).find(".hover-block-wrapp").animate({ top: "335px" }).fadeToggle();
-            $(this).find(" .block-title .title-h3").fadeToggle();
+            $this= $(this);
+            $this.find(".hover-block-wrapp").animate({ top: "335px" }).fadeToggle(10);
+            $this.find(" .block-title .title-h3").fadeToggle();
         }
     );
 });

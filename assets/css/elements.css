@@ -24,6 +24,7 @@ div {
   box-sizing: border-box;
 }
 a {
+  color: #C3092F;
   text-decoration: none;
   transition: color 0.3s ease;
 }
@@ -45,6 +46,9 @@ section {
 }
 .container {
   max-width: 1284px;
+}
+.container-middle {
+  max-width: 1070px;
 }
 .container-small {
   max-width: 670px;
