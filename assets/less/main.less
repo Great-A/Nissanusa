@@ -62,7 +62,29 @@
         display: inline-flex;
         align-items: center;
         justify-content: center;
+    }
+}
 
+.menu-page-bottom {
+    background-color: @grey;
+    padding: 13px 0 11px;
+    font-size: 16px;
+    line-height: 20px;
+
+    .mpb-container {
+        max-width: 322px;
+    }
+    
+    .mpb-row {
+        justify-content: center;
+    }
+   
+    a {
+        font-weight: bold;
+        color: #666666;
+        &:hover {
+            text-decoration: underline;
+        }
     }
 }
 
@@ -507,6 +529,9 @@
 
     .content-img-round {
         padding: 70px 0 130px;
+        p {
+            font-size: 20px;
+        }
     }
 
     .img-round {

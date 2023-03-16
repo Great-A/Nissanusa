@@ -32,7 +32,6 @@ body {
   margin: 0;
   font-family: 'NissanPro';
   font-weight: 500;
-  font-size: 20px;
   line-height: 27px;
   overflow-x: hidden;
   color: #343434;
@@ -171,6 +170,25 @@ section {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+}
+.menu-page-bottom {
+  background-color: #EFEFEF;
+  padding: 13px 0 11px;
+  font-size: 16px;
+  line-height: 20px;
+}
+.menu-page-bottom .mpb-container {
+  max-width: 322px;
+}
+.menu-page-bottom .mpb-row {
+  justify-content: center;
+}
+.menu-page-bottom a {
+  font-weight: bold;
+  color: #666666;
+}
+.menu-page-bottom a:hover {
+  text-decoration: underline;
 }
 .hero-section {
   position: relative;
@@ -522,6 +540,9 @@ section {
 }
 .section-round-img .content-img-round {
   padding: 70px 0 130px;
+}
+.section-round-img .content-img-round p {
+  font-size: 20px;
 }
 .section-round-img .img-round {
   border: 20px solid #343434;
