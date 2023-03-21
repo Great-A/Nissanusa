@@ -6,11 +6,24 @@
 
 @media (min-width: 769px) {
     .section-round-img .container-img-round .info-wrapper {
-        max-width:532px;
+        max-width: 532px;
     }
 }
 
 @media (max-width: 769px) {
+    .hero-section {
+        margin-top: 104px;
+
+        .container {
+            padding: 83px 33px 95px;
+        }
+
+        .hero-content h1 {
+            font-size: 60px;
+            line-height: 64px;
+        }
+    }
+
     .location-explore-wrapper {
         width: auto;
     }
@@ -39,7 +52,6 @@
 
         .img-round-wrapp {
             border: none;
-            position: inherit;
         }
 
         .img-round {
@@ -63,13 +75,19 @@
 
     .statistic {
         gap: 50px;
+
         .statistic-container {
             gap: 50px;
         }
     }
+
+    .menu-page-bottom {
+        top: 60px;
+    }
 }
 
 @media (min-width:426px) and (max-width: 769px) {
+
     #manufacturing {
         .blocks-wrapper {
             flex-direction: column;
@@ -79,9 +97,15 @@
             flex-direction: row;
         }
 
-        .image-wrapper img {
+        .image-wrapper {
+            max-width: 220px;
             min-width: 220px;
             border-radius: 30px 0 0 30px;
+
+            img {
+                min-width: 220px;
+                border-radius: 30px 0 0 30px;
+            }
         }
 
         .content-wrapper {
@@ -92,19 +116,192 @@
 }
 
 @media (max-width: 426px) {
-    #manufacturing .content-wrapper {
-        padding: 30px;
+    .container {
+        padding: 0 36px;
     }
 
-    .section-slider .slide {
-        padding: 50px;
+    body p {
+        font-size: 20px;
+        font-weight: 400;
     }
 
-    .section-round-img .h2-title-img {
-        font-size: 90px;
-        line-height: 65px;
+    #manufacturing {
+        padding: 0;
+        background: none;
+
+        .container-small {
+            padding: 50px 33px;
+            margin-bottom: 0;
+            background-color: #C3002F;
+        }
+
+        .container+.container {
+            padding: 50px 33px;
+            background-color: #8F0526;
+        }
+
+
+        .h2-custom {
+            margin-bottom: 8px;
+        }
+
+        .blocks-wrapper {
+            flex-direction: column;
+            gap: 50px;
+            padding: 0px 6px;
+        }
+
+        .content-wrapper {
+            padding: 30px 40px 45px;
+
+            .content-block {
+                .content {
+                    font-size: 20px;
+                    font-weight: 400;
+                    margin-bottom: 30px;
+                }
+            }
+        }
+
+        .image-wrapper {
+            min-height: 170px;
+        }
+
+        .link-wrapper {
+            display: flex;
+            position: relative;
+        }
+
+        .link {
+            max-width: 175px;
+            position: unset;
+            line-height: 20px;
+        }
     }
 
+    .section-slider {
+        margin: 47px 0;
+        padding: 40px 0;
+        background-color: #EFEFEF;
 
+        .slick-list {
+            border-radius: 0;
+        }
+
+        .container {
+            padding: 0;
+        }
+
+        .slide {
+            position: relative;
+            background-color: #8F0526;
+            background-size: 100% 214px;
+            border-radius: 0;
+            background-position: top;
+            height: 523px;
+            padding: 230px 45px 48px;
+            align-items: center;
+
+            .slider-content {
+                h2 {
+                    font-size: 44px;
+                    font-weight: 400;
+                    line-height: 57px;
+                }
+            }
+        }
+
+        .slide-1 {
+            .slider-content h2 {
+                font-size: 60px;
+                line-height: 60px;
+                text-align: left;
+            }
+        }
+
+        .slick-arrow {
+            display: none !important;
+        }
+
+        .slick-dots {
+            gap: 8px;
+
+            li button::before {
+                width: 44px;
+            }
+        }
+
+        .swipe-mob {
+            display: flex;
+            position: absolute;
+            gap: 10px;
+            right: 20px;
+            bottom: 17px;
+
+            p {
+                font-size: 18px;
+            }
+
+            img {
+                transform: rotate(90deg);
+            }
+
+        }
+
+        .slick-dots {
+            margin-bottom: 6px;
+
+            li {
+                width: 44px;
+                margin: 0;
+            }
+        }
+    }
+
+    .section-round-img {
+        .h2-title-img {
+            font-size: 71px;
+            line-height: 52px;
+            left: -3px;
+        }
+
+        .title-img-container {
+            height: 135px;
+        }
+    }
+
+    .h2-nissan {
+        font-size: 50px;
+        line-height: 64px;
+    }
+
+    .section-round-img {
+        .img-round-wrapp {
+            right: -80px;
+            top: -100px;
+            border: 18px solid #70707031;
+            .container {
+                padding: 0 24px;
+            }
+        }
+
+        .img-round {
+            height: 160px;
+            width: 160px;
+            border: 10px solid #343434;
+        }
+    }
+
+    #employee-focus {
+        padding: 60px 0;
+        .container {
+            padding:  0 27px;
+        }
+        .block-container {
+            .title-h3 {
+                font-size: 24px;
+            }
+        } 
+    }
 
 }

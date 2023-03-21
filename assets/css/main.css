@@ -172,7 +172,7 @@ section {
   justify-content: center;
 }
 .menu-page-bottom {
-  background-color: #EFEFEF;
+  background-color: #000000;
   padding: 13px 0 11px;
   font-size: 16px;
   line-height: 20px;
@@ -183,12 +183,23 @@ section {
 .menu-page-bottom .mpb-row {
   justify-content: center;
 }
+.menu-page-bottom .mpb-col {
+  text-align: center;
+  position: relative;
+  padding: 0;
+  margin: 0 12px;
+}
 .menu-page-bottom a {
   font-weight: bold;
-  color: #666666;
+  color: #EFEFEF;
 }
-.menu-page-bottom a:hover {
-  text-decoration: underline;
+.menu-page-bottom a:hover::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -11px;
+  border-bottom: 4px solid #C3002F;
 }
 .hero-section {
   position: relative;
@@ -196,6 +207,7 @@ section {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  margin-top: 164px;
 }
 .hero-section .overlay {
   position: absolute;
@@ -247,40 +259,12 @@ section {
   gap: 36px;
   padding: 0 12px;
 }
-#manufacturing .block-container {
-  display: flex;
-  flex-direction: column;
-  padding: 0;
-}
-#manufacturing .block-container:hover .block-title {
-  display: none;
-}
-#manufacturing .image-wrapper img {
-  object-fit: cover;
-  width: 100%;
-  border-radius: 30px 30px 0 0;
-  height: 240px;
-}
-#manufacturing .content-wrapper {
-  height: 100%;
-  flex-direction: column;
-  background-color: #ffffff;
-  padding: 30px 45px 35px;
-  border-radius: 0 0 30px 30px;
-  display: flex;
-  justify-content: space-between;
-}
-#manufacturing .content-wrapper .content-block .h4-custom {
-  margin-bottom: 13px;
-}
-#manufacturing .content-wrapper .content-block .content {
-  margin-bottom: 5px;
-}
 #manufacturing .link {
   position: relative;
   font-weight: 500;
   font-size: 16px;
-  padding-right: 25px;
+  padding-right: 20px;
+  transition: 0.5s ease all;
 }
 #manufacturing .link:before {
   content: '';
@@ -296,6 +280,48 @@ section {
 }
 #manufacturing .link:hover:before {
   background-image: url('../img/arrow-right-hover.svg');
+}
+#manufacturing .block-container {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  overflow: hidden;
+}
+#manufacturing .block-container:hover .block-title {
+  display: none;
+}
+#manufacturing .block-container:hover img {
+  transform: scale(1.1);
+}
+#manufacturing .block-container:hover .link {
+  padding-right: 30px;
+}
+#manufacturing .image-wrapper {
+  overflow: hidden;
+  min-height: 240px;
+  border-radius: 30px 30px 0 0;
+}
+#manufacturing .image-wrapper img {
+  transition: 0.5s ease all;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  border-radius: 30px 30px 0 0;
+}
+#manufacturing .content-wrapper {
+  height: 100%;
+  flex-direction: column;
+  background-color: #ffffff;
+  padding: 30px 45px 35px;
+  border-radius: 0 0 30px 30px;
+  display: flex;
+  justify-content: space-between;
+}
+#manufacturing .content-wrapper .content-block .h4-custom {
+  margin-bottom: 13px;
+}
+#manufacturing .content-wrapper .content-block .content {
+  margin-bottom: 5px;
 }
 #location-explore {
   background-image: url('../img/location-explore.png');
@@ -489,6 +515,24 @@ section {
 .section-slider .slide-6 {
   background-image: url('../img/slide-5.png');
 }
+.section-slider .swipe-mob {
+  display: none;
+}
+.section-slider .swipe-mob .img-wrapp {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  background-color: #C3002F;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+}
+.section-slider .swipe-mob .img-wrapp img {
+  transform: rotate(90deg);
+  width: 17px;
+  height: 13px;
+}
 .section-round-img .title-img-wrapp {
   padding-top: 24px;
 }
@@ -499,6 +543,7 @@ section {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  background-attachment: fixed;
 }
 .section-round-img.product {
   padding-bottom: 100px;
@@ -510,7 +555,12 @@ section {
   padding-bottom: 100px;
 }
 .section-round-img.purpose .title-img-container {
+  height: 640px;
   background-image: url('../img/purpose-banner.png');
+}
+.section-round-img.purpose .img-round-wrapp {
+  right: -83px;
+  top: -182px;
 }
 .section-round-img .h2-title-img {
   position: absolute;
@@ -739,4 +789,16 @@ section {
   right: -95px;
   top: 30px;
   z-index: 2;
+}
+#nissan_global_header,
+.menu-page-bottom {
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+}
+#nissan_global_header {
+  top: 0;
+}
+.menu-page-bottom {
+  top: 120px;
 }

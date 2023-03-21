@@ -52,8 +52,6 @@ jQuery(document).ready(function ($) {
     Fancybox.bind(".gallery-type-1 a", fancy_settings);
     Fancybox.bind(".gallery-type-2 a", fancy_settings);
 
-
-
     $('.slick-slider').slick({
         dots: true,
         responsive: [
@@ -61,6 +59,13 @@ jQuery(document).ready(function ($) {
                 breakpoint: 769,
                 settings: {
                     dots: false,
+                }
+            },
+            {
+                breakpoint: 426,
+                settings: {
+                    arrow: false,
+                    infinite: false,
                 }
             }
         ]
