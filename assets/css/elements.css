@@ -28,12 +28,15 @@ a {
   text-decoration: none;
   transition: color 0.3s ease;
 }
+body,
+html {
+  overflow-x: hidden;
+}
 body {
   margin: 0;
   font-family: 'NissanPro';
   font-weight: 500;
   line-height: 27px;
-  overflow-x: hidden;
   color: #343434;
 }
 body #page {
@@ -45,6 +48,9 @@ section {
 }
 .container {
   max-width: 1284px;
+}
+.container-big {
+  max-width: 1374px;
 }
 .container-middle {
   max-width: 1070px;
@@ -77,8 +83,17 @@ section {
 .bg-red {
   background-color: #C3002F;
 }
+.c-red {
+  color: #C3002F;
+}
+.c-red-dark {
+  color: #8F0526;
+}
 .bg-dark-red {
   background-color: #8F0526;
+}
+.t-big {
+  font-size: 80px !important;
 }
 .btn {
   position: relative;

@@ -42,6 +42,9 @@ a {
     text-decoration: none;
     transition: color 0.3s ease;
 }
+body,html {
+    overflow-x: hidden;
+}
 
 body {
     margin: 0;
@@ -49,7 +52,6 @@ body {
     font-weight: 500;
     // font-size: 20px;
     line-height: 27px;
-    overflow-x: hidden;
     color: @grey-2;
 
     #page {
@@ -64,6 +66,10 @@ section {
 
 .container {
     max-width: 1284px;
+}
+
+.container-big {
+    max-width: 1374px;
 }
 
 .container-middle {
@@ -104,8 +110,20 @@ section {
     background-color: @red;
 }
 
+.c-red {
+    color: @red;
+}
+
+.c-red-dark {
+    color: @dark-red;
+}
+
 .bg-dark-red {
     background-color: @dark-red;
+}
+
+.t-big {
+    font-size: 80px !important;
 }
 
 .btn {
@@ -127,6 +145,7 @@ section {
     &:hover {
         background-color: @dark-red;
     }
+    
 }
 
 .d-flex {
@@ -160,6 +179,7 @@ section {
 .link {
     color: @red;
     text-transform: capitalize;
+
     &:hover {
         color: @dark-red;
     }

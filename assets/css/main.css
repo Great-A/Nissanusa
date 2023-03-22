@@ -28,12 +28,15 @@ a {
   text-decoration: none;
   transition: color 0.3s ease;
 }
+body,
+html {
+  overflow-x: hidden;
+}
 body {
   margin: 0;
   font-family: 'NissanPro';
   font-weight: 500;
   line-height: 27px;
-  overflow-x: hidden;
   color: #343434;
 }
 body #page {
@@ -45,6 +48,9 @@ section {
 }
 .container {
   max-width: 1284px;
+}
+.container-big {
+  max-width: 1374px;
 }
 .container-middle {
   max-width: 1070px;
@@ -77,8 +83,17 @@ section {
 .bg-red {
   background-color: #C3002F;
 }
+.c-red {
+  color: #C3002F;
+}
+.c-red-dark {
+  color: #8F0526;
+}
 .bg-dark-red {
   background-color: #8F0526;
+}
+.t-big {
+  font-size: 80px !important;
 }
 .btn {
   position: relative;
@@ -552,7 +567,8 @@ section {
   background-image: url('../img/production.png');
 }
 .section-round-img.purpose {
-  padding-bottom: 100px;
+  padding: 100px 0 50px;
+  overflow: unset;
 }
 .section-round-img.purpose .title-img-container {
   height: 640px;
@@ -561,6 +577,9 @@ section {
 .section-round-img.purpose .img-round-wrapp {
   right: -83px;
   top: -182px;
+}
+.section-round-img.purpose .content-img-round {
+  padding-bottom: 0;
 }
 .section-round-img .h2-title-img {
   position: absolute;
@@ -728,17 +747,6 @@ section {
 #employee-focus .chevron-elem:hover {
   transform: rotate(3.142rad);
 }
-.statistic {
-  padding-bottom: 60px;
-}
-.statistic .statistic-container {
-  display: flex;
-  flex-direction: column;
-  gap: 75px;
-}
-.statistic .statistic-container .staristic-row {
-  gap: 40px;
-}
 .section-slider-2 .slide {
   position: relative;
   background-size: cover;
@@ -801,4 +809,36 @@ section {
 }
 .menu-page-bottom {
   top: 120px;
+}
+.statistics {
+  padding: 60px 0;
+  background-color: #EFEFEF;
+}
+.statistics .blocks {
+  display: flex;
+  gap: 35px;
+  flex-wrap: wrap;
+}
+.statistics .blocks:first-child {
+  gap: unset;
+  justify-content: space-between;
+  max-width: 636px;
+  margin-bottom: 43px;
+}
+.statistics .block {
+  width: 290px;
+  padding: 50px 12px;
+  background-color: #ffffff;
+  border-radius: 30px;
+  text-align: center;
+  font-size: 22px;
+  line-height: 26px;
+}
+.statistics .block .title {
+  font-size: 48px;
+  line-height: 61px;
+}
+.statistics .block-img img {
+  position: absolute;
+  left: 0;
 }

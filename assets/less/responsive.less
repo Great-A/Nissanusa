@@ -2,6 +2,10 @@
     .section-slider-2 .right-img {
         display: none;
     }
+
+    .statistics .block-img img {
+        position: relative;
+    }
 }
 
 @media (min-width: 769px) {
@@ -83,6 +87,29 @@
 
     .menu-page-bottom {
         top: 60px;
+    }
+
+    .statistics {
+        padding: 55px 0;
+
+        .blocks {
+            width: 100%;
+
+            &:first-child {
+                gap: 50px;
+            }
+        }
+
+        .img-col {
+            height: 310px;
+        }
+
+        .block-img {
+            img {
+                transform: scale(1.1);
+            }
+        }
+
     }
 }
 
@@ -268,21 +295,20 @@
         .title-img-container {
             height: 135px;
         }
-    }
 
-    .h2-nissan {
-        font-size: 50px;
-        line-height: 64px;
-    }
-
-    .section-round-img {
         .img-round-wrapp {
             right: -80px;
             top: -100px;
-            border: 18px solid #70707031;
+            border: 18px solid #66666611;
+
             .container {
                 padding: 0 24px;
             }
+        }
+
+        .h2-nissan {
+            font-size: 50px;
+            line-height: 64px;
         }
 
         .img-round {
@@ -290,18 +316,31 @@
             width: 160px;
             border: 10px solid #343434;
         }
+
+        &.purpose {
+            .title-img-container {
+                height: 188px;
+            }
+
+            .img-round-wrapp {
+                top: -100px;
+            }
+        }
     }
 
     #employee-focus {
         padding: 60px 0;
+
         .container {
-            padding:  0 27px;
+            padding: 0 27px;
         }
+
         .block-container {
             .title-h3 {
                 font-size: 24px;
             }
-        } 
+        }
     }
+
 
 }

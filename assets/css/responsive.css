@@ -2,6 +2,9 @@
   .section-slider-2 .right-img {
     display: none;
   }
+  .statistics .block-img img {
+    position: relative;
+  }
 }
 @media (min-width: 769px) {
   .section-round-img .container-img-round .info-wrapper {
@@ -63,6 +66,21 @@
   }
   .menu-page-bottom {
     top: 60px;
+  }
+  .statistics {
+    padding: 55px 0;
+  }
+  .statistics .blocks {
+    width: 100%;
+  }
+  .statistics .blocks:first-child {
+    gap: 50px;
+  }
+  .statistics .img-col {
+    height: 310px;
+  }
+  .statistics .block-img img {
+    transform: scale(1.1);
   }
 }
 @media (min-width: 426px) and (max-width: 769px) {
@@ -203,22 +221,28 @@
   .section-round-img .title-img-container {
     height: 135px;
   }
-  .h2-nissan {
-    font-size: 50px;
-    line-height: 64px;
-  }
   .section-round-img .img-round-wrapp {
     right: -80px;
     top: -100px;
-    border: 18px solid #70707031;
+    border: 18px solid #66666611;
   }
   .section-round-img .img-round-wrapp .container {
     padding: 0 24px;
+  }
+  .section-round-img .h2-nissan {
+    font-size: 50px;
+    line-height: 64px;
   }
   .section-round-img .img-round {
     height: 160px;
     width: 160px;
     border: 10px solid #343434;
+  }
+  .section-round-img.purpose .title-img-container {
+    height: 188px;
+  }
+  .section-round-img.purpose .img-round-wrapp {
+    top: -100px;
   }
   #employee-focus {
     padding: 60px 0;
