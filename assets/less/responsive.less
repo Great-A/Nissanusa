@@ -3,8 +3,38 @@
         display: none;
     }
 
-    .statistics .block-img img {
-        position: relative;
+    .section-round-img .img-round {
+        height: 300px;
+        width: 300px;
+    }
+
+    .statistics {
+        .block-img {
+            gap: 36px;
+            justify-content: center;
+
+            .img-col {
+                justify-content: center;
+
+                img {
+                    border-radius: 30px;
+                    position: relative;
+                }
+            }
+        }
+
+        .blocks-wrapp {
+            justify-content: center;
+        }
+
+        .blocks {
+            max-width: 700px;
+            justify-content: center;
+        }
+
+        .blocks:first-child {
+            justify-content: center;
+        }
     }
 }
 
@@ -100,13 +130,11 @@
             }
         }
 
-        .img-col {
-            height: 310px;
-        }
-
         .block-img {
-            img {
-                transform: scale(1.1);
+            .img-col {
+                img {
+                    border-radius: 0;
+                }
             }
         }
 
@@ -340,6 +368,20 @@
                 font-size: 24px;
             }
         }
+    }
+
+    .statistics {
+
+        .block-img {
+            .img-col {
+                height: 268px;
+                img {
+                  position: absolute;
+                  max-width: inherit;
+                }
+            }
+        }
+
     }
 
 

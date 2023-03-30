@@ -71,25 +71,129 @@ jQuery(document).ready(function ($) {
         ]
     });
 
-    $('.slick-slider-2').slick({
-        infinite: false,
+
+    var ps_options = {
+        infinite: true,
         dots: false,
-        arrow: false,
-        adaptiveHeight: true
+        arrow: true,
+    };
+
+
+    var prod_slider = $('.product-slider').slick(ps_options);
+    var capacity = $('.capacity-slider').slick(ps_options);
+
+    prod_slider.on('afterChange', function (event, slick, currentSlide) {
+        var a = slick.$slider.closest('.le-section-right');
+        a.find(".product-list li").eq(currentSlide).addClass('active').siblings('li').removeClass('active');
     });
+
+    var pp = $('.pin-wrap');
+
+    var elem = document.querySelector('.section-slider-2');
+
+    if (elem.addEventListener) {
+        if ('onwheel' in document) {
+            // IE9+, FF17+
+            elem.addEventListener("wheel", onWheel);
+        } else if ('onmousewheel' in document) {
+            // 
+            elem.addEventListener("mousewheel", onWheel);
+        } else {
+            // Firefox < 17
+            elem.addEventListener("MozMousePixelScroll", onWheel);
+        }
+    } else { // IE8-
+        elem.attachEvent("onmousewheel", onWheel);
+    }
+
+    // console.log($(".pin-wrap").width());
+
+    function onWheel(e) {
+        e = e || window.event;
+        var delta = e.deltaY || e.detail || e.wheelDelta;
+        var el = pp[0];
+
+        if (delta > 0) {
+            if (pp.scrollLeft() + el.clientWidth >= el.scrollWidth) {
+                return;
+            }
+            var flag = pp.scrollLeft() + 80;
+            pp.scrollLeft(flag);
+        } else {
+            if (pp.scrollLeft() === 0) {
+                return;
+            }
+            // flag -= step;
+            // pp.css('transform', 'translate(-'+flag+'px)');
+            var flag = pp.scrollLeft() - 80;
+            pp.scrollLeft(flag)
+        }
+
+        e.preventDefault ? e.preventDefault() : (e.returnValue = false);
+    }
+
 
 
     $(".block-overlay-hidden").hover(
         function () {
-            $this= $(this);
+            $this = $(this);
             $this.find(".hover-block-wrapp").fadeToggle(10).animate({ top: "0" });
             $this.find(".block-title .title-h3").fadeToggle();
         },
         function () {
-            $this= $(this);
+            $this = $(this);
             $this.find(".hover-block-wrapp").animate({ top: "335px" }).fadeToggle(10);
             $this.find(" .block-title .title-h3").fadeToggle();
         }
     );
-});
 
+    $(".location-block").on("click", function (e) {
+        $(this).addClass('active').siblings().removeClass('active');
+
+        var pSec = $(this).closest('section');
+
+        var block_target = $(this).attr('data-target');
+        pSec.find('.info-block[data-id="' + block_target + '"]').addClass('active').siblings('.info-block').removeClass('active');
+
+
+        var a1 = pSec.find('.loc-exp-bottom[data-id="' + block_target + '"]');
+        a1.addClass('active').siblings('.loc-exp-bottom').removeClass('active');
+
+        var le_section = pSec.find('.le-section-right[data-id="' + block_target + '"]');
+        le_section.addClass('active').siblings('.le-section-right').removeClass('active');
+
+        pSec.addClass('active');
+
+        le_section.find('.product-slider').slick('unslick');
+        le_section.find('.product-slider').slick(ps_options);
+        a1.find('.capacity-slider').slick('unslick');
+        a1.find('.capacity-slider').slick(ps_options);
+    });
+
+
+
+    var $menu = $(".menu-page-bottom");
+    var $sections = $("section");
+    var lastId = $sections.last().attr("id");
+  
+    $(window).scroll(function() {
+      var currentPosition = $(this).scrollTop();
+  
+      $sections.each(function() {
+        var sectionTop = $(this).offset().top - 144;
+        var sectionBottom = sectionTop + $(this).outerHeight();
+  
+        if (currentPosition >= sectionTop && currentPosition <= sectionBottom) {
+          var currentId = $(this).attr("id");
+  
+          $menu.find("a").removeClass("active");
+  
+          $menu.find("a[href='#" + currentId + "']").addClass("active");
+  
+          if (currentId == lastId) {
+            $menu.find("a").removeClass("active");
+          }
+        }
+      });
+    });
+});
