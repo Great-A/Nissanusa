@@ -36,11 +36,31 @@
             justify-content: center;
         }
     }
+
+
+    .location-explore.active {
+        padding: 45px 0 70px;
+
+        .main-container {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    .le-section-right.active {
+        gap: 30px;
+    }
 }
 
 @media (min-width: 769px) {
     .section-round-img .container-img-round .info-wrapper {
         max-width: 532px;
+    }
+
+    .section-round-img {
+        .title-img-container {
+            background-attachment: fixed;
+        }
     }
 }
 
@@ -137,7 +157,6 @@
                 }
             }
         }
-
     }
 }
 
@@ -235,7 +254,7 @@
     }
 
     .section-slider {
-        margin: 47px 0;
+        margin: 0;
         padding: 40px 0;
         background-color: #EFEFEF;
 
@@ -370,19 +389,76 @@
         }
     }
 
-    .statistics {
+    .location-explore .main-container {
+        padding: 0 15px;
+    }
 
-        .block-img {
-            .img-col {
-                height: 268px;
-                img {
-                  position: absolute;
-                  max-width: inherit;
+    .location-explore-wrapper {
+        padding: 25px 25px 0;
+
+        .title-top {
+            font-size: 20px;
+            line-height: 20px;
+        }
+
+        .title-bottom {
+            font-size: 12px;
+        }
+
+        .info-block.active {
+            flex-direction: column-reverse;
+
+            .col,
+            .col-8 {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+            }
+
+            .col {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    }
+
+    .location-explore {
+        .loc-exp-bottom {
+            gap: 30px;
+
+            .bottom-col {
+
+                &.bc-1,
+                &.bc-2 {
+                    margin: auto;
                 }
             }
         }
-
     }
 
+    .le-section-right.active {
+        flex-direction: column;
+    }
 
+    .right-section {
+        gap: 30px;
+    }
+
+    .pin-wrap {
+        margin-left: 0;
+    }
+
+    .section-slider-2 .slide {
+        padding: 0;
+        .slide-wrapp {
+            height: 100%;
+            padding: 0;
+            padding: 50px 0 30px;
+        }
+
+        .img-round-wrapp {
+            display: none;
+           
+        }
+    }
 }

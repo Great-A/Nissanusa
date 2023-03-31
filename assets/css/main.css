@@ -450,6 +450,7 @@ section {
   display: flex;
   height: 100%;
   align-items: center;
+  font-size: 60px;
 }
 .location-explore .loc-exp-bottom .bottom-col.bc-2 {
   background-color: #C3002F;
@@ -872,13 +873,12 @@ section {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  background-attachment: fixed;
 }
 .section-round-img.product {
   padding-bottom: 100px;
 }
 .section-round-img.product .title-img-container {
-  background-image: url('../img/webp/production.png'), url('../img/production.png');
+  background-image: url('../img/webp/production.webp'), url('../img/production.png');
 }
 .section-round-img.purpose {
   padding-bottom: 50px;
@@ -886,7 +886,7 @@ section {
 }
 .section-round-img.purpose .title-img-container {
   height: 640px;
-  background-image: url('../img/webp/purpose-banner.png'), url('../img/purpose-banner.png');
+  background-image: url('../img/webp/purpose-banner.webp'), url('../img/purpose-banner.png');
 }
 .section-round-img.purpose .img-round-wrapp {
   right: -83px;
@@ -1061,6 +1061,10 @@ section {
 #employee-focus .chevron-elem:hover {
   transform: rotate(3.142rad);
 }
+.section-slider-2 {
+  overflow: unset;
+  margin-bottom: 17px;
+}
 .section-slider-2 .slide {
   position: relative;
   background-size: cover;
@@ -1103,10 +1107,11 @@ section {
 }
 .section-slider-2 .slide.slide-5 {
   background-image: url('../img/webp/trim-chassis.webp'), url('../img/trim-chassis.png');
-  overflow: hidden;
+}
+.section-slider-2 .slide.slide-5 .slide-wrapp {
+  padding-left: 60px;
 }
 .section-slider-2 .slide.slide-5 .img-round-wrapp {
-  bottom: -160px;
   top: 0;
 }
 .section-slider-2 .slide.slide-6 {
@@ -1188,7 +1193,7 @@ section {
 }
 .pin-wrap {
   /*white-space: nowrap;*/
-  overflow-x: auto;
+  overflow-x: unset;
   display: flex;
   left: 0;
   transition: all 0.3s;

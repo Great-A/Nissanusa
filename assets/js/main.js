@@ -108,7 +108,41 @@ jQuery(document).ready(function ($) {
 
     // console.log($(".pin-wrap").width());
 
+    var scrollLeft = 0;
+    var allWidth = 0;
+    pp.children('div').each(function(index, el) {
+        if(index === 0) return;
+        allWidth += $(window).outerWidth();
+    });
+    
+    console.log(allWidth);
     function onWheel(e) {
+        e = e || window.event;
+        var delta = e.deltaY || e.detail || e.wheelDelta;
+        var el = pp[0];
+
+        if (delta > 0) {
+
+            if(scrollLeft === allWidth) return;
+            
+            if(scrollLeft + 40 > allWidth) {
+                scrollLeft = scrollLeft + (allWidth - scrollLeft);                
+            } else {
+                scrollLeft = scrollLeft + 40;
+            }            
+            
+            pp.css('margin-left', -1 * scrollLeft + 'px');
+            
+        } else {
+            if(scrollLeft <= 0) return;
+            scrollLeft = scrollLeft - 40;           
+            pp.css('margin-left', -1 * scrollLeft + 'px');
+        }
+
+        e.preventDefault ? e.preventDefault() : (e.returnValue = false);
+    }
+
+    function onWheelBack(e) {
         e = e || window.event;
         var delta = e.deltaY || e.detail || e.wheelDelta;
         var el = pp[0];
@@ -117,7 +151,7 @@ jQuery(document).ready(function ($) {
             if (pp.scrollLeft() + el.clientWidth >= el.scrollWidth) {
                 return;
             }
-            var flag = pp.scrollLeft() + 80;
+            var flag = pp.scrollLeft() + 40;
             pp.scrollLeft(flag);
         } else {
             if (pp.scrollLeft() === 0) {
@@ -125,13 +159,12 @@ jQuery(document).ready(function ($) {
             }
             // flag -= step;
             // pp.css('transform', 'translate(-'+flag+'px)');
-            var flag = pp.scrollLeft() - 80;
+            var flag = pp.scrollLeft() - 40;
             pp.scrollLeft(flag)
         }
 
         e.preventDefault ? e.preventDefault() : (e.returnValue = false);
     }
-
 
 
     $(".block-overlay-hidden").hover(
