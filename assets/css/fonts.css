@@ -1,8 +1,11 @@
 @font-face {
-    font-family: NissanPro;
+    font-family: NissanBrand;
     font-weight: 300;
     font-style: normal;
-    src: url("../fonts/NissanProLight.otf") format("opentype");
+    src: url("../fonts/NissanBrandW01-Light.eot");
+    src: url("../fonts/NissanBrandW01-Light.woff") format("woff"),
+        url("../fonts/NissanBrandW01-Light.ttf") format('truetype'),
+        url("../fonts/NissanBrandW01-Light.svg") format("svg");
 }
 
 @font-face {
@@ -13,17 +16,23 @@
 }
 
 @font-face {
-    font-family: NissanPro;
+    font-family: NissanBrand;
     font-weight: 400;
     font-style: normal;
-    src: url("../fonts/NissanProReg.otf") format("opentype");
+    src: url("../fonts/NissanBrandW01-Regular.eot");
+    src: url("../fonts/NissanBrandW01-Regular.woff") format("woff"),
+        url("../fonts/NissanBrandW01-Regular.ttf") format('truetype'),
+        url("../fonts/NissanBrandW01-Regular.svg") format("svg");
 }
 
 @font-face {
     font-family: NissanPro;
     font-weight: 400;
     font-style:italic;
-    src: url("../fonts/NissanProRegIta.otf") format("opentype");
+    src: url("../fonts/NissanBrandW01-Italic.eot");
+    src: url("../fonts/NissanBrandW01-Italic.woff") format("woff"),
+        url("../fonts/NissanBrandW01-Italic.ttf") format('truetype'),
+        url("../fonts/NissanBrandW01-Italic.svg") format("svg");
 }
 
 @font-face {
@@ -34,9 +43,12 @@
 }
 
 @font-face {
-    font-family: NissanPro;
+    font-family: NissanBrand;
     font-weight: 700;
-    src: url("../fonts/NissanProBold.otf") format("opentype");
+    src: url("../fonts/NissanBrandW01-Bold.eot");
+    src: url("../fonts/NissanBrandW01-Bold.woff") format("woff"),
+        url("../fonts/NissanBrandW01-Bold.ttf") format('truetype'),
+        url("../fonts/NissanBrandW01-Bold.svg") format("svg");
 }
 
 @font-face {
