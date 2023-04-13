@@ -1,0 +1,17 @@
+diff a/manufacturing.html b/manufacturing.html	(rejected hunks)
+@@ -129,10 +129,12 @@
+     <section class="location-explore">
+         <div class="container d-flex main-container">
+             <div class="col loc-exp-container">
+-                <div class="title-nissan">NISSAN MANUFACTURING</div>
+-                <div class="title-state">IN THE u.S.</div>
++                <h2 class="title-nissan">
++                    Nissan manufacturing
++                    <div class="title-state">In the U.S.</div>
++                </h2>
+                 <div class="location-explore-wrapper">
+-                    <h4 class="custom-h4">Choose a Location to Explore</h4>
++                    <p class="custom-h4">Choose a Location to Explore</p>
+                     <div class="row location-wrap">
+                         <div class="col location-block" data-target="content-1">
+                             <h4 class="title-top">Canton</h4>

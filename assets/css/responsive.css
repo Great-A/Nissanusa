@@ -1,3 +1,8 @@
+@media all and (max-width: 1199px) {
+  .statistics .block-img .img-col {
+    justify-content: center;
+  }
+}
 @media all and (max-width: 1025px) {
   .section-slider-2 .right-img {
     display: none;
@@ -12,10 +17,6 @@
   }
   .statistics .block-img .img-col {
     justify-content: center;
-  }
-  .statistics .block-img .img-col img {
-    border-radius: 30px;
-    position: relative;
   }
   .statistics .blocks-wrapp {
     justify-content: center;
@@ -116,6 +117,9 @@
   }
 }
 @media (min-width: 426px) and (max-width: 769px) {
+  #manufacturing {
+    background: linear-gradient(#C3002F 22%, #8F0526 18%);
+  }
   #manufacturing .blocks-wrapper {
     flex-direction: column;
   }
@@ -138,7 +142,7 @@
 }
 @media (max-width: 426px) {
   .container {
-    padding: 0 36px;
+    padding: 0 33px;
   }
   body p {
     font-size: 20px;
@@ -276,11 +280,17 @@
   .section-round-img.purpose .img-round-wrapp {
     top: -100px;
   }
+  .section-round-img .title-img-wrapp {
+    padding-top: 10px;
+  }
+  .section-round-img .content-img-round {
+    padding-bottom: 0;
+  }
   #employee-focus {
     padding: 60px 0;
   }
   #employee-focus .container {
-    padding: 0 27px;
+    padding: 0 33px;
   }
   #employee-focus .block-container .title-h3 {
     font-size: 24px;

@@ -223,9 +223,9 @@ jQuery(document).ready(function ($) {
   
           $menu.find("a[href='#" + currentId + "']").addClass("active");
   
-          if (currentId == lastId) {
-            $menu.find("a").removeClass("active");
-          }
+        //   if (currentId == lastId) {
+        //     $menu.find("a").removeClass("active");
+        //   }
         }
       });
     });
