@@ -63,6 +63,7 @@ section {
   line-height: 43px;
   font-weight: 700;
 }
+.h1-custom,
 .h2-custom {
   color: #ffffff;
   font-size: 40px;
@@ -258,7 +259,7 @@ section {
   max-width: 615px;
   text-align: center;
 }
-.hero-section .hero-content h1 {
+.hero-section .hero-content .hero-title {
   font-size: 70px;
   font-weight: bold;
   line-height: 94px;
@@ -338,6 +339,8 @@ section {
 }
 #manufacturing .content-wrapper .content-block .content {
   margin-bottom: 5px;
+  font-weight: 400;
+  line-height: 24px;
 }
 .location-explore {
   background-image: url('../img/webp/location-explore.webp'), url('../img/location-explore.png');
@@ -648,12 +651,12 @@ section {
   font-size: 27px;
   font-weight: 700;
   line-height: 40px;
+  text-transform: uppercase;
 }
 .loc-exp-container .title-state {
   font-size: 41px;
   font-weight: 700;
   font-weight: 40px;
-  text-transform: uppercase;
   margin-bottom: 26px;
 }
 .location-explore-wrapper {
@@ -897,11 +900,12 @@ section {
 }
 .section-round-img .h2-title-img {
   position: absolute;
+  font-weight: bold;
   bottom: 0;
   left: -15px;
   font-family: 'NissanProSuper';
   text-transform: uppercase;
-  font-size: 260px;
+  font-size: 16.25rem;
   line-height: 185px;
   color: #ffffff;
   opacity: 39%;
@@ -960,7 +964,7 @@ section {
   position: relative;
   max-width: 312px;
 }
-#employee-focus .block-container .title-h3 {
+#employee-focus .block-container .title-h4 {
   font-size: 20px;
   color: #343434;
   text-align: center;
@@ -1235,4 +1239,7 @@ section {
 .loc-exp-bottom.active,
 .info-block.active {
   display: flex;
+}
+#nissan_global_footer {
+  background-color: #000000;
 }
