@@ -89,7 +89,7 @@
     a {
         font-weight: bold;
         color: @grey;
-       
+
         &:hover::before,
         &.active:before {
             content: '';
@@ -119,8 +119,23 @@
         z-index: 0;
     }
 
+    .overlay-video {
+        background-size: cover;
+        overflow: hidden;
+
+        #video-hero-bg {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 1095px;
+            transform: translateY(-50%);
+        }
+
+    }
+
     .dark-layear {
-        z-index: 1;
+        z-index: 2;
         overflow: hidden;
 
         &::after {
@@ -138,7 +153,7 @@
 
     .container {
         padding: 157px 0 149px;
-        z-index: 2;
+        z-index: 3;
         position: relative;
     }
 
@@ -256,7 +271,7 @@
 }
 
 .location-explore {
-    background-image: url('../img/webp/location-explore.webp'), url('../img/location-explore.png') ;
+    background-image: url('../img/webp/location-explore.webp'), url('../img/location-explore.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -926,7 +941,7 @@
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
-       
+
     }
 
     &.product {
@@ -1169,6 +1184,7 @@
 .section-slider-2 {
     overflow: unset;
     margin-bottom: 17px;
+
     .slide {
         position: relative;
         background-size: cover;
@@ -1232,7 +1248,7 @@
 
         &.slide-6 {
             overflow: hidden;
-            background-image: url('../img/webp/sl-6.webp'),  url('../img/sl-6.png');
+            background-image: url('../img/webp/sl-6.webp'), url('../img/sl-6.png');
 
             img {
                 height: 453px;

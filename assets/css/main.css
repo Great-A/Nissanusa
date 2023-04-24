@@ -234,8 +234,20 @@ section {
   height: 100%;
   z-index: 0;
 }
+.hero-section .overlay-video {
+  background-size: cover;
+  overflow: hidden;
+}
+.hero-section .overlay-video #video-hero-bg {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 1095px;
+  transform: translateY(-50%);
+}
 .hero-section .dark-layear {
-  z-index: 1;
+  z-index: 2;
   overflow: hidden;
 }
 .hero-section .dark-layear::after {
@@ -251,7 +263,7 @@ section {
 }
 .hero-section .container {
   padding: 157px 0 149px;
-  z-index: 2;
+  z-index: 3;
   position: relative;
 }
 .hero-section .hero-content {
