@@ -137,12 +137,12 @@ jQuery(document).ready(function ($) {
         function () {
             $this = $(this);
             $this.find(".hover-block-wrapp").fadeToggle(10).animate({ top: "0" });
-            $this.find(".block-title .title-h3").fadeToggle();
+            $this.find(".block-title .title-h4").fadeToggle();
         },
         function () {
             $this = $(this);
             $this.find(".hover-block-wrapp").animate({ top: "335px" }).fadeToggle(10);
-            $this.find(" .block-title .title-h3").fadeToggle();
+            $this.find(" .block-title .title-h4").fadeToggle();
         }
     );
 
@@ -195,4 +195,11 @@ jQuery(document).ready(function ($) {
         }
       });
     });
+
+
+
+    $('.overlay-video-image').click(function() {
+        $(this).removeClass('overlay-video-image');
+        $('#slider-video').attr('src', 'https://www.youtube.com/embed/OQ7Jr1oFAeg?controls=0&autoplay=1');
+      });
 });
