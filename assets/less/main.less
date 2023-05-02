@@ -87,7 +87,6 @@
     }
 
     a {
-        font-weight: bold;
         color: @grey;
 
         &:hover::before,
@@ -104,11 +103,8 @@
 
 .hero-section {
     position: relative;
-    background-image: url('../img/webp/hero-banner.webp'), url('../img/hero-banner.png');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    margin-top: 164px;
+    background-color: @red;
+    padding: 55px 0;
 
     .overlay {
         position: absolute;
@@ -119,59 +115,59 @@
         z-index: 0;
     }
 
-    .overlay-video {
-        background-size: cover;
-        overflow: hidden;
-
-        #video-hero-bg {
-            position: absolute;
-            top: 50%;
-            left: 0;
-            width: 100%;
-            height: 1095px;
-            transform: translateY(-50%);
-        }
-
-    }
-
-    .dark-layear {
-        z-index: 2;
-        overflow: hidden;
-
-        &::after {
-            background-color: #343434;
-            opacity: 54%;
-            content: "";
-            height: 100%;
-            left: 0;
-            position: absolute;
-            top: 0;
-            width: 100%;
-            z-index: 1;
-        }
-    }
-
-    .container {
-        padding: 157px 0 149px;
-        z-index: 3;
+    .video-hero {
         position: relative;
+    }
+
+
+    #video-hero-bg {
+        width: 100%;
+        height: 550px
     }
 
     .hero-content {
         color: @white;
-        max-width: 615px;
-        text-align: center;
+        background-color: @dark-red;
+
+        &:before {
+            content: '';
+            position: absolute;
+            background: url('../img/play-video.svg') no-repeat;
+            width: 77px;
+            height: 77px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%; -50%);
+            cursor: pointer;
+        }
 
         .hero-title {
-            font-size: 70px;
-            font-weight: bold;
-            line-height: 94px;
+            max-width: 380px;
+            font-size: 72px;
+            font-weight: 300;
+            line-height: 65px;
+            position: absolute;
+            bottom: 25px;
+            left: 12px;
         }
+    }
+
+    p {
+        font-size: 18px;
+        color: @white;
+        line-height: 24px;
+    }
+
+    .hero-right-block {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        height: 100%;
     }
 }
 
 #manufacturing {
-    background: linear-gradient(#C3002F 50%, #8F0526 50%);
+    background: linear-gradient(#C3002F 35%, #8F0526 30%);
     padding: 68px 0 87px;
 
     .container-small {
@@ -186,7 +182,7 @@
 
     .link {
         position: relative;
-        font-weight: 500;
+        font-weight: 700;
         font-size: 16px;
         padding-right: 20px;
         transition: 0.5s ease all;
@@ -700,6 +696,7 @@
     .title-bottom {
         font-size: 16px;
         line-height: 20px;
+        font-weight: 700;
         text-transform: uppercase;
     }
 
@@ -864,14 +861,13 @@
             z-index: 2;
 
             h2 {
-                font-family: 'NissanProSuper';
                 font-size: 100px;
                 line-height: 129px;
             }
 
             p {
-                font-family: 'NissanProSuper';
                 font-size: 28px;
+                font-weight: 700;
                 line-height: 30px;
                 text-transform: uppercase;
             }
@@ -932,6 +928,7 @@
             }
         }
     }
+
 }
 
 .section-round-img {
@@ -983,7 +980,6 @@
         font-weight: bold;
         bottom: 0;
         left: -15px;
-        font-family: 'NissanProSuper';
         text-transform: uppercase;
         font-size: 16.25rem;
         line-height: 185px;
@@ -1016,7 +1012,8 @@
         padding: 70px 0 130px;
 
         p {
-            font-size: 20px;
+            font-size: 18px;
+            line-height: 24px;
         }
     }
 
@@ -1064,7 +1061,8 @@
         max-width: 312px;
 
         .title-h4 {
-            font-size: 20px;
+            font-size: 24px;
+            line-height: 26px;
             color: @grey-2;
             text-align: center;
         }
@@ -1347,22 +1345,22 @@
         }
 
     }
+
 }
 
-#nissan_global_header,
+
 .menu-page-bottom {
-    position: fixed;
+    position: sticky;
     width: 100%;
 }
 
-#nissan_global_header {
-    top: 0;
-    z-index: 999;
-}
+// .c_320B_blocker {
+//     display: none;
+// }
 
 .menu-page-bottom {
-    top: 120px;
-    z-index: 350;
+    top: 0;
+    z-index: 999;
 }
 
 .statistics {
@@ -1419,13 +1417,14 @@
 
     .subtitle {
         font-size: 20px;
-        line-height: 25px;
+        line-height: 27px;
+        font-weight: 700;
         text-transform: uppercase;
     }
 
     p {
         font-size: 20px;
-        line-height: 25px;
+        line-height: 24px;
         margin-bottom: 20px;
 
         &:last-child {
@@ -1463,5 +1462,5 @@
 }
 
 #nissan_global_footer {
-    background-color: #000000;
+    background-color: #1e1e1e;
 }

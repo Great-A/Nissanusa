@@ -50,8 +50,3 @@
         url("../fonts/NissanBrandW01-Bold.ttf") format('truetype'),
         url("../fonts/NissanBrandW01-Bold.svg") format("svg");
 }
-
-@font-face {
-    font-family: NissanProSuper;
-    src: url("../fonts/NissanProSuper.otf") format("opentype");
-}

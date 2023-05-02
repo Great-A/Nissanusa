@@ -28,7 +28,6 @@ a {
   text-decoration: none;
   transition: color 0.3s ease;
 }
-body,
 html {
   overflow-x: hidden;
 }
@@ -66,11 +65,12 @@ section {
 .h1-custom,
 .h2-custom {
   color: #ffffff;
-  font-size: 40px;
-  line-height: 53px;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 64px;
 }
 .h2-nissan {
-  font-size: 80px;
+  font-size: 72px;
   line-height: 102px;
   color: #C3092F;
   font-weight: 300;

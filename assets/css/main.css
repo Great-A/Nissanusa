@@ -28,7 +28,6 @@ a {
   text-decoration: none;
   transition: color 0.3s ease;
 }
-body,
 html {
   overflow-x: hidden;
 }
@@ -66,11 +65,12 @@ section {
 .h1-custom,
 .h2-custom {
   color: #ffffff;
-  font-size: 40px;
-  line-height: 53px;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 64px;
 }
 .h2-nissan {
-  font-size: 80px;
+  font-size: 72px;
   line-height: 102px;
   color: #C3092F;
   font-weight: 300;
@@ -206,7 +206,6 @@ section {
   margin: 0 12px;
 }
 .menu-page-bottom a {
-  font-weight: bold;
   color: #EFEFEF;
 }
 .menu-page-bottom a:hover::before,
@@ -220,11 +219,8 @@ section {
 }
 .hero-section {
   position: relative;
-  background-image: url('../img/webp/hero-banner.webp'), url('../img/hero-banner.png');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  margin-top: 164px;
+  background-color: #C3002F;
+  padding: 55px 0;
 }
 .hero-section .overlay {
   position: absolute;
@@ -234,50 +230,50 @@ section {
   height: 100%;
   z-index: 0;
 }
-.hero-section .overlay-video {
-  background-size: cover;
-  overflow: hidden;
-}
-.hero-section .overlay-video #video-hero-bg {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 100%;
-  height: 1095px;
-  transform: translateY(-50%);
-}
-.hero-section .dark-layear {
-  z-index: 2;
-  overflow: hidden;
-}
-.hero-section .dark-layear::after {
-  background-color: #343434;
-  opacity: 54%;
-  content: "";
-  height: 100%;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  z-index: 1;
-}
-.hero-section .container {
-  padding: 157px 0 149px;
-  z-index: 3;
+.hero-section .video-hero {
   position: relative;
+}
+.hero-section #video-hero-bg {
+  width: 100%;
+  height: 550px;
 }
 .hero-section .hero-content {
   color: #ffffff;
-  max-width: 615px;
-  text-align: center;
+  background-color: #8F0526;
+}
+.hero-section .hero-content:before {
+  content: '';
+  position: absolute;
+  background: url('../img/play-video.svg') no-repeat;
+  width: 77px;
+  height: 77px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
 }
 .hero-section .hero-content .hero-title {
-  font-size: 70px;
-  font-weight: bold;
-  line-height: 94px;
+  max-width: 380px;
+  font-size: 72px;
+  font-weight: 300;
+  line-height: 65px;
+  position: absolute;
+  bottom: 25px;
+  left: 12px;
+}
+.hero-section p {
+  font-size: 18px;
+  color: #ffffff;
+  line-height: 24px;
+}
+.hero-section .hero-right-block {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
 }
 #manufacturing {
-  background: linear-gradient(#C3002F 50%, #8F0526 50%);
+  background: linear-gradient(#C3002F 35%, #8F0526 30%);
   padding: 68px 0 87px;
 }
 #manufacturing .container-small {
@@ -290,7 +286,7 @@ section {
 }
 #manufacturing .link {
   position: relative;
-  font-weight: 500;
+  font-weight: 700;
   font-size: 16px;
   padding-right: 20px;
   transition: 0.5s ease all;
@@ -697,6 +693,7 @@ section {
 .location-explore-wrapper .title-bottom {
   font-size: 16px;
   line-height: 20px;
+  font-weight: 700;
   text-transform: uppercase;
 }
 .location-explore-wrapper .location-block {
@@ -830,13 +827,12 @@ section {
   z-index: 2;
 }
 .section-slider .slide .slider-content h2 {
-  font-family: 'NissanProSuper';
   font-size: 100px;
   line-height: 129px;
 }
 .section-slider .slide .slider-content p {
-  font-family: 'NissanProSuper';
   font-size: 28px;
+  font-weight: 700;
   line-height: 30px;
   text-transform: uppercase;
 }
@@ -917,7 +913,6 @@ section {
   font-weight: bold;
   bottom: 0;
   left: -15px;
-  font-family: 'NissanProSuper';
   text-transform: uppercase;
   font-size: 16.25rem;
   line-height: 185px;
@@ -944,7 +939,8 @@ section {
   padding: 70px 0 130px;
 }
 .section-round-img .content-img-round p {
-  font-size: 20px;
+  font-size: 18px;
+  line-height: 24px;
 }
 .img-round {
   border: 20px solid #707070;
@@ -983,7 +979,8 @@ section {
   max-width: 312px;
 }
 #employee-focus .block-container .title-h4 {
-  font-size: 20px;
+  font-size: 24px;
+  line-height: 26px;
   color: #343434;
   text-align: center;
 }
@@ -1209,18 +1206,13 @@ section {
   top: 50%;
   transform: translate(-50%, -50%);
 }
-#nissan_global_header,
 .menu-page-bottom {
-  position: fixed;
+  position: sticky;
   width: 100%;
 }
-#nissan_global_header {
+.menu-page-bottom {
   top: 0;
   z-index: 999;
-}
-.menu-page-bottom {
-  top: 120px;
-  z-index: 350;
 }
 .statistics {
   padding: 60px 0;
@@ -1267,12 +1259,13 @@ section {
 }
 .pin-wrap .subtitle {
   font-size: 20px;
-  line-height: 25px;
+  line-height: 27px;
+  font-weight: 700;
   text-transform: uppercase;
 }
 .pin-wrap p {
   font-size: 20px;
-  line-height: 25px;
+  line-height: 24px;
   margin-bottom: 20px;
 }
 .pin-wrap p:last-child {
@@ -1303,5 +1296,5 @@ section {
   display: flex;
 }
 #nissan_global_footer {
-  background-color: #000000;
+  background-color: #1e1e1e;
 }

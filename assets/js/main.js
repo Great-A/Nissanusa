@@ -76,11 +76,11 @@ jQuery(document).ready(function ($) {
 
     var scrollLeft = 0;
     var allWidth = 0;
-    pp.children('div').each(function(index, el) {
-        if(index === 0) return;
+    pp.children('div').each(function (index, el) {
+        if (index === 0) return;
         allWidth += $(window).outerWidth();
     });
-    
+
     console.log(allWidth);
     function onWheel(e) {
         e = e || window.event;
@@ -89,19 +89,19 @@ jQuery(document).ready(function ($) {
 
         if (delta > 0) {
 
-            if(scrollLeft === allWidth) return;
-            
-            if(scrollLeft + 40 > allWidth) {
-                scrollLeft = scrollLeft + (allWidth - scrollLeft);                
+            if (scrollLeft === allWidth) return;
+
+            if (scrollLeft + 40 > allWidth) {
+                scrollLeft = scrollLeft + (allWidth - scrollLeft);
             } else {
                 scrollLeft = scrollLeft + 40;
-            }            
-            
+            }
+
             pp.css('margin-left', -1 * scrollLeft + 'px');
-            
+
         } else {
-            if(scrollLeft <= 0) return;
-            scrollLeft = scrollLeft - 40;           
+            if (scrollLeft <= 0) return;
+            scrollLeft = scrollLeft - 40;
             pp.css('margin-left', -1 * scrollLeft + 'px');
         }
 
@@ -174,32 +174,36 @@ jQuery(document).ready(function ($) {
     var $menu = $(".menu-page-bottom");
     var $sections = $("section");
     var lastId = $sections.last().attr("id");
-  
-    $(window).scroll(function() {
-      var currentPosition = $(this).scrollTop();
-  
-      $sections.each(function() {
-        var sectionTop = $(this).offset().top - 144;
-        var sectionBottom = sectionTop + $(this).outerHeight();
-  
-        if (currentPosition >= sectionTop && currentPosition <= sectionBottom) {
-          var currentId = $(this).attr("id");
-  
-          $menu.find("a").removeClass("active");
-  
-          $menu.find("a[href='#" + currentId + "']").addClass("active");
-  
-        //   if (currentId == lastId) {
-        //     $menu.find("a").removeClass("active");
-        //   }
-        }
-      });
+
+    $(window).scroll(function () {
+        var currentPosition = $(this).scrollTop();
+
+        $sections.each(function () {
+            var sectionTop = $(this).offset().top - 144;
+            var sectionBottom = sectionTop + $(this).outerHeight();
+
+            if (currentPosition >= sectionTop && currentPosition <= sectionBottom) {
+                var currentId = $(this).attr("id");
+
+                $menu.find("a").removeClass("active");
+
+                $menu.find("a[href='#" + currentId + "']").addClass("active");
+
+                //   if (currentId == lastId) {
+                //     $menu.find("a").removeClass("active");
+                //   }
+            }
+        });
     });
 
 
-
-    $('.overlay-video-image').click(function() {
+    $('.overlay-video-image').click(function () {
         $(this).removeClass('overlay-video-image');
-        $('#slider-video').attr('src', 'https://www.youtube.com/embed/OQ7Jr1oFAeg?controls=0&autoplay=1');
-      });
+        $('#slider-video').attr('src', 'https://www.youtube.com/embed/OQ7Jr1oFAeg?&autoplay=1&loop=1&mute=1');
+    });
+
+    $('.video-hero').click(function () {
+        $('.hero-content').remove();
+        $('#video-hero-bg').attr('src', 'https://www.youtube.com/embed/OQ7Jr1oFAeg?&autoplay=1&mute=1');
+    });
 });
