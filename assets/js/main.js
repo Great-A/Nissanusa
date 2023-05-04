@@ -197,13 +197,13 @@ jQuery(document).ready(function ($) {
     });
 
 
+    $('.video-hero').click(function () {
+        $('.hero-content').remove();
+        $('#video-hero-bg').attr('src', 'https://www.youtube.com/embed/OQ7Jr1oFAeg?&autoplay=1&loop=1&mute=1&playlist=OQ7Jr1oFAeg');
+    });
+
     $('.overlay-video-image').click(function () {
         $(this).removeClass('overlay-video-image');
         $('#slider-video').attr('src', 'https://www.youtube.com/embed/OQ7Jr1oFAeg?&autoplay=1&loop=1&mute=1');
-    });
-
-    $('.video-hero').click(function () {
-        $('.hero-content').remove();
-        $('#video-hero-bg').attr('src', 'https://www.youtube.com/embed/OQ7Jr1oFAeg?&autoplay=1&mute=1');
     });
 });

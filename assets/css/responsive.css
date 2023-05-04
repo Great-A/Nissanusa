@@ -38,10 +38,8 @@
   .le-section-right.active {
     gap: 30px;
   }
-}
-@media all and (max-width: 959px) {
-  .menu-page-bottom {
-    top: 82px;
+  .slider-video {
+    display: none;
   }
 }
 @media (min-width: 769px) {
@@ -56,15 +54,31 @@
   }
 }
 @media (max-width: 769px) {
+  .h1-custom,
+  .h2-custom {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 35px;
+    margin-bottom: 20px;
+  }
   .hero-section {
-    margin-top: 104px;
+    margin-top: 0;
   }
   .hero-section .container {
-    padding: 83px 33px 95px;
+    padding: 0 33px;
   }
   .hero-section .hero-content h1 {
     font-size: 60px;
     line-height: 64px;
+  }
+  .hero-section .row {
+    gap: 50px;
+  }
+  .hero-section p {
+    font-size: 20px;
+  }
+  .hero-section #video-hero-bg {
+    height: 175px;
   }
   .location-explore-wrapper {
     width: auto;
@@ -120,11 +134,11 @@
   .statistics .block-img .img-col img {
     border-radius: 0;
   }
+  #manufacturing {
+    background: #8F0526;
+  }
 }
 @media (min-width: 426px) and (max-width: 769px) {
-  #manufacturing {
-    background: linear-gradient(#C3002F 22%, #8F0526 18%);
-  }
   #manufacturing .blocks-wrapper {
     flex-direction: column;
   }
@@ -152,10 +166,6 @@
   body p {
     font-size: 20px;
     font-weight: 400;
-  }
-  #manufacturing {
-    padding: 0;
-    background: none;
   }
   #manufacturing .container-small {
     padding: 50px 33px;
@@ -196,7 +206,7 @@
   }
   .section-slider {
     margin: 0;
-    padding: 40px 0;
+    padding: 0 0 40px;
     background-color: #EFEFEF;
   }
   .section-slider .slick-list {
@@ -304,7 +314,7 @@
     padding: 0 15px;
   }
   .location-explore-wrapper {
-    padding: 25px 25px 0;
+    padding: 25px 25px !important;
   }
   .location-explore-wrapper .title-top {
     font-size: 20px;

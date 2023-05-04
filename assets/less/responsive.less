@@ -1,7 +1,7 @@
 @media all and (max-width: 1199px) {
     .statistics .block-img .img-col {
-            justify-content: center;
-        }
+        justify-content: center;
+    }
 
 }
 
@@ -52,11 +52,9 @@
     .le-section-right.active {
         gap: 30px;
     }
-}
 
-@media all and (max-width: 959px) {
-    .menu-page-bottom {
-        top: 82px;
+    .slider-video {
+        display: none;
     }
 }
 
@@ -79,16 +77,37 @@
 }
 
 @media (max-width: 769px) {
+
+    .h1-custom,
+    .h2-custom {
+        font-size: 40px;
+        font-weight: 700;
+        line-height: 35px;
+        margin-bottom: 20px;
+    }
+
     .hero-section {
-        margin-top: 104px;
+        margin-top: 0;
 
         .container {
-            padding: 83px 33px 95px;
+            padding: 0 33px;
         }
 
         .hero-content h1 {
             font-size: 60px;
             line-height: 64px;
+        }
+
+        .row {
+            gap: 50px;
+        }
+
+        p {
+            font-size: 20px;
+        }
+
+        #video-hero-bg {
+            height: 175px;
         }
     }
 
@@ -168,12 +187,16 @@
             }
         }
     }
+
+    #manufacturing {
+        background: #8F0526;
+    }
 }
 
 @media (min-width:426px) and (max-width: 769px) {
 
     #manufacturing {
-        background: linear-gradient(#C3002F 22%, #8F0526 18%);
+
         .blocks-wrapper {
             flex-direction: column;
         }
@@ -211,8 +234,6 @@
     }
 
     #manufacturing {
-        padding: 0;
-        background: none;
 
         .container-small {
             padding: 50px 33px;
@@ -266,7 +287,7 @@
 
     .section-slider {
         margin: 0;
-        padding: 40px 0;
+        padding: 0 0 40px;
         background-color: #EFEFEF;
 
         .slick-list {
@@ -411,9 +432,10 @@
     .location-explore .main-container {
         padding: 0 15px;
     }
+    
 
     .location-explore-wrapper {
-        padding: 25px 25px 0;
+        padding: 25px 25px !important;
 
         .title-top {
             font-size: 20px;
@@ -469,6 +491,7 @@
 
     .section-slider-2 .slide {
         padding: 0;
+
         .slide-wrapp {
             height: 100%;
             padding: 0;
