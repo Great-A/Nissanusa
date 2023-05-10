@@ -44,6 +44,8 @@ body #page {
 }
 section {
   overflow: hidden;
+  max-width: 1500px;
+  margin: auto;
 }
 .container {
   max-width: 1284px;
@@ -192,6 +194,8 @@ section {
   padding: 13px 0 11px;
   font-size: 16px;
   line-height: 20px;
+  max-width: 1500px;
+  margin: auto;
 }
 .menu-page-bottom .mpb-container {
   max-width: 322px;
@@ -221,6 +225,8 @@ section {
   position: relative;
   background-color: #C3002F;
   padding: 55px 0;
+  max-width: 1500px;
+  margin: auto;
 }
 .hero-section .overlay {
   position: absolute;
@@ -1276,7 +1282,4 @@ section {
 .loc-exp-bottom.active,
 .info-block.active {
   display: flex;
-}
-#nissan_global_footer {
-  background-color: #1e1e1e;
 }

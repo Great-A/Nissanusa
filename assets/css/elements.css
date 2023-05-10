@@ -44,6 +44,8 @@ body #page {
 }
 section {
   overflow: hidden;
+  max-width: 1500px;
+  margin: auto;
 }
 .container {
   max-width: 1284px;

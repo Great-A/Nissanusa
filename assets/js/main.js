@@ -204,6 +204,21 @@ jQuery(document).ready(function ($) {
 
     $('.overlay-video-image').click(function () {
         $(this).removeClass('overlay-video-image');
-        $('#slider-video').attr('src', 'https://www.youtube.com/embed/OQ7Jr1oFAeg?&autoplay=1&loop=1&mute=1');
+        $('#slider-video').attr('src', 'https://www.youtube.com/embed/hzdAtYIIyWE?&autoplay=1&loop=1&mute=1');
     });
+
+    $('.link-nissan-purpose').click(function (event) {
+        event.preventDefault();
+        var url = $(this).attr('href') + '?dcp=mfg.SUS.purpose.promo';
+        window.location.href = url;
+    });
+
+    
+    $('.link-product').click(function (event) {
+        event.preventDefault();
+        var model = $('.product-list li.active').text().toLowerCase();
+        var url = $(this).attr('href') + '?dcp=mfg.' + model + '.BNP.loc.promo';
+        window.open(url, '_blank');
+    });
+
 });
