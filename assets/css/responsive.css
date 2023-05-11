@@ -15,8 +15,23 @@
     margin: auto;
     margin-top: 50px;
   }
-  .section-slider-2 .right-img {
+  .section-slider-2 .right-img,
+  .section-slider-2 .img-round-wrapp {
     display: none;
+  }
+  .section-slider-2 .slide.slide-1 .container {
+    margin: 0;
+    padding: 18px;
+  }
+  .section-slider-2 .slide.slide-2 .slide-wrapp,
+  .section-slider-2 .slide.slide-4 .slide-wrapp,
+  .section-slider-2 .slide.slide-5 .slide-wrapp,
+  .section-slider-2 .slide .slide-wrapp {
+    padding-left: 0px;
+    padding-right: 0;
+  }
+  .section-slider-2 .slide .slide-wrapp {
+    height: 100%;
   }
   .section-round-img .img-round {
     height: 300px;
@@ -63,6 +78,9 @@
   .hero-section .row {
     gap: 12px;
   }
+  .section-slider-2 .slide.slide-1 .container {
+    margin-left: 50px;
+  }
 }
 @media (max-width: 769px) {
   .h1-custom,
@@ -77,6 +95,7 @@
     padding: 0;
   }
   .hero-section .hero-right-block {
+    height: auto;
     padding: 0 33px;
   }
   .hero-section .hero-content h1 {
@@ -86,9 +105,6 @@
   .hero-section .hero-content .hero-title {
     font-size: 42px;
     line-height: 45px;
-  }
-  .hero-section p {
-    font-size: 20px;
   }
   .hero-section #video-hero-bg {
     height: 250px;
@@ -201,7 +217,7 @@
     padding: 30px 40px 45px;
   }
   #manufacturing .content-wrapper .content-block .content {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 400;
     margin-bottom: 30px;
   }
@@ -244,8 +260,9 @@
     line-height: 57px;
   }
   .section-slider .slide-1 .slider-content h2 {
-    font-size: 60px;
-    line-height: 60px;
+    font-size: 45px;
+    line-height: 50px;
+    font-weight: 300;
     text-align: left;
   }
   .section-slider .slick-arrow {
@@ -327,7 +344,7 @@
     padding: 0 15px;
   }
   .location-explore-wrapper {
-    padding: 25px 20px !important;
+    padding: 25px 20px 0 !important;
   }
   .location-explore-wrapper .title-top {
     font-size: 20px;
@@ -372,10 +389,12 @@
   .section-slider-2 .slide {
     padding: 0;
   }
-  .section-slider-2 .slide .slide-wrapp {
+  .section-slider-2 .slide.slide-1 .h3-custom {
+    line-height: 60px;
+  }
+  .section-slider-2 .slide.slide-1 .slide-wrapp {
     height: 100%;
-    padding: 0;
-    padding: 50px 0 30px;
+    padding: 28px 0;
   }
   .section-slider-2 .slide .img-round-wrapp {
     display: none;

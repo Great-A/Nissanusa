@@ -20,8 +20,33 @@
         margin-top: 50px;
     }
 
-    .section-slider-2 .right-img {
-        display: none;
+    .section-slider-2 {
+
+        .right-img,
+        .img-round-wrapp {
+            display: none;
+        }
+
+        .slide {
+            &.slide-1 .container {
+                margin: 0;
+                padding: 18px;
+            }
+
+            &.slide-2 .slide-wrapp,
+            &.slide-4 .slide-wrapp,
+            &.slide-5 .slide-wrapp,
+            .slide-wrapp {
+                padding-left: 0px;
+                padding-right: 0;
+            }
+
+            .slide-wrapp {
+                height: 100%;
+            }
+        }
+
+
     }
 
     .section-round-img .img-round {
@@ -88,6 +113,10 @@
             gap: 12px;
         }
     }
+
+    .section-slider-2 .slide.slide-1 .container {
+        margin-left: 50px;
+    }
 }
 
 @media (max-width: 769px) {
@@ -102,14 +131,15 @@
         margin-top: 0;
 
         .container {
-          padding: 0;
+            padding: 0;
         }
 
         .hero-right-block {
+            height: auto;
             padding: 0 33px;
         }
 
-        .hero-content  {
+        .hero-content {
             h1 {
                 font-size: 60px;
                 line-height: 64px;
@@ -119,10 +149,6 @@
                 font-size: 42px;
                 line-height: 45px;
             }
-        }
-
-        p {
-            font-size: 20px;
         }
 
         #video-hero-bg {
@@ -281,7 +307,7 @@
 
             .content-block {
                 .content {
-                    font-size: 20px;
+                    font-size: 18px;
                     font-weight: 400;
                     margin-bottom: 30px;
                 }
@@ -338,8 +364,9 @@
 
         .slide-1 {
             .slider-content h2 {
-                font-size: 60px;
-                line-height: 60px;
+                font-size: 45px;
+                line-height: 50px;
+                font-weight: 300;
                 text-align: left;
             }
         }
@@ -454,7 +481,7 @@
 
 
     .location-explore-wrapper {
-        padding: 25px 20px !important;
+        padding: 25px 20px 0 !important;
 
         .title-top {
             font-size: 20px;
@@ -518,15 +545,21 @@
     .section-slider-2 .slide {
         padding: 0;
 
-        .slide-wrapp {
-            height: 100%;
-            padding: 0;
-            padding: 50px 0 30px;
+        &.slide-1 {
+            .h3-custom {
+                line-height: 60px;
+            }
+
+            .slide-wrapp {
+                height: 100%;
+                padding: 28px 0;
+            }
         }
 
         .img-round-wrapp {
             display: none;
         }
+
     }
 
     .h1-custom {

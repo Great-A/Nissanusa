@@ -1,5 +1,11 @@
 jQuery(document).ready(function ($) {
 
+    window.digitalData = {
+        "pageName": "nissanmanufacturing|landing",
+        "countryCode": "US",
+        "languageCode": "en"
+    }
+
     Fancybox.bind(".hero-play", {
         Video: {
             close: {
@@ -213,7 +219,7 @@ jQuery(document).ready(function ($) {
         window.location.href = url;
     });
 
-    
+
     $('.link-product').click(function (event) {
         event.preventDefault();
         var model = $('.product-list li.active').text().toLowerCase();
