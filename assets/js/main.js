@@ -1,28 +1,22 @@
 jQuery(document).ready(function ($) {
 
-    window.digitalData = {
-        "pageName": "nissanmanufacturing|landing",
-        "countryCode": "US",
-        "languageCode": "en"
-    }
+    // Fancybox.bind(".hero-play", {
+    //     Video: {
+    //         close: {
+    //             type: "button",
+    //             label: "CLOSE",
+    //             class: "fancybox__button--close",
+    //             html: '<svg width="42" height="42" viewBox="0 0 21 16" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4.13599" y="-0.485291" width="21" height="3" rx="1.5" transform="rotate(45 4.13599 -0.485291)" fill="#FFFAEF" /><rect x="18.9707" y="1.63605" width="21" height="3" rx="1.5" transform="rotate(135 18.9707 1.63605)" fill="#FFFAEF" /></svg>',
+    //             tabindex: 1,
+    //             click: function (event) {
+    //                 event.stopPropagation();
+    //                 event.preventDefault();
 
-    Fancybox.bind(".hero-play", {
-        Video: {
-            close: {
-                type: "button",
-                label: "CLOSE",
-                class: "fancybox__button--close",
-                html: '<svg width="42" height="42" viewBox="0 0 21 16" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4.13599" y="-0.485291" width="21" height="3" rx="1.5" transform="rotate(45 4.13599 -0.485291)" fill="#FFFAEF" /><rect x="18.9707" y="1.63605" width="21" height="3" rx="1.5" transform="rotate(135 18.9707 1.63605)" fill="#FFFAEF" /></svg>',
-                tabindex: 1,
-                click: function (event) {
-                    event.stopPropagation();
-                    event.preventDefault();
-
-                    this.fancybox.close();
-                }
-            }
-        }
-    });
+    //                 this.fancybox.close();
+    //             }
+    //         }
+    //     }
+    // });
 
     $('.slick-slider').slick({
         dots: true,
@@ -179,7 +173,6 @@ jQuery(document).ready(function ($) {
 
     var $menu = $(".menu-page-bottom");
     var $sections = $("section");
-    var lastId = $sections.last().attr("id");
 
     $(window).scroll(function () {
         var currentPosition = $(this).scrollTop();
@@ -195,9 +188,9 @@ jQuery(document).ready(function ($) {
 
                 $menu.find("a[href='#" + currentId + "']").addClass("active");
 
-                //   if (currentId == lastId) {
-                //     $menu.find("a").removeClass("active");
-                //   }
+
+                _satellite.track('trackInteraction', { contentType: 'scroll', contentValue: currentId });// Add the following line to track the scroll event
+
             }
         });
     });
@@ -213,12 +206,26 @@ jQuery(document).ready(function ($) {
         $('#slider-video').attr('src', 'https://www.youtube.com/embed/hzdAtYIIyWE?&autoplay=1&loop=1&mute=1');
     });
 
+    // Adobe Track
+
+    $(window).scroll(function () {
+        var scrollTop = $(this).scrollTop();
+        var locationsTop = $('#location-main-section').offset().top;
+        var locationsHeight = $('#location-main-section').outerHeight();
+
+        if (scrollTop >= locationsTop && scrollTop < locationsTop + locationsHeight) {
+            // Fire tracking event
+            _satellite.track('trackInteraction', { contentType: 'scroll', contentValue: 'locations' });
+
+            console.log('test');
+        }
+    });
+
     $('.link-nissan-purpose').click(function (event) {
         event.preventDefault();
         var url = $(this).attr('href') + '?dcp=mfg.SUS.purpose.promo';
         window.location.href = url;
     });
-
 
     $('.link-product').click(function (event) {
         event.preventDefault();
@@ -227,4 +234,28 @@ jQuery(document).ready(function ($) {
         window.open(url, '_blank');
     });
 
+    $('.adobe-track').click(function () {
+        var contentType = $(this).data('content-type');
+        var contentValue = $(this).data('content-value');
+        var contentLocation = $(this).data('content-location');
+        var contentAction = $(this).data('content-action');
+        var data = { contentType: contentType, contentValue: contentValue, contentLocation: contentLocation }
+
+        if (contentAction) {
+            data.contentAction = contentAction;
+        }
+
+        _satellite.track('trackInteraction ', data);
+
+
+        console.log(contentType);
+        console.log(contentValue);
+        console.log(contentLocation);
+        console.log(contentAction);
+
+
+
+    });
+
+    // End Adobe Track
 });

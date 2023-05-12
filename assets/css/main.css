@@ -37,6 +37,7 @@ body {
   font-weight: 500;
   line-height: 27px;
   color: #343434;
+  overflow-x: initial !important;
 }
 body #page {
   position: relative;
@@ -142,52 +143,6 @@ body #page {
 }
 .link:hover {
   color: #8F0526;
-}
-:root {
-  --fancybox-thumbs-width: 50px;
-}
-.fancybox__content :focus:not(.carousel__button.is-close) {
-  outline: none !important;
-}
-.fancybox__toolbar {
-  --carousel-button-svg-width: 44px;
-  --carousel-button-svg-height: 44px;
-}
-.fancybox__content img {
-  max-height: 75vh !important;
-}
-.fancybox__backdrop {
-  background-color: rgba(18, 18, 18, 0.8);
-}
-.fancybox__thumb {
-  padding-top: calc(100%/(var(--fancybox-thumbs-ratio, 0.92)));
-  border-radius: 0;
-}
-.fancybox__thumbs .carousel__slide .fancybox__thumb::after {
-  border-width: 0;
-}
-.fancybox__thumbs .carousel__slide {
-  width: 50px;
-}
-.fancybox__slide::before,
-.fancybox__slide::after {
-  display: none;
-}
-.fancybox__track {
-  align-items: center;
-}
-.fancybox__container {
-  justify-content: center;
-}
-.fancybox__carousel {
-  height: unset;
-}
-.fancybox__nav .carousel__button {
-  width: 62px;
-  height: 62px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
 }
 .menu-page-bottom {
   background-color: #000000;

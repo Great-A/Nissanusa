@@ -37,6 +37,7 @@ body {
   font-weight: 500;
   line-height: 27px;
   color: #343434;
+  overflow-x: initial !important;
 }
 body #page {
   position: relative;
