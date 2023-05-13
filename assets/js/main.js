@@ -72,8 +72,6 @@ jQuery(document).ready(function ($) {
         elem.attachEvent("onmousewheel", onWheel);
     }
 
-    // console.log($(".pin-wrap").width());
-
     var scrollLeft = 0;
     var allWidth = 0;
     pp.children('div').each(function (index, el) {
@@ -81,7 +79,9 @@ jQuery(document).ready(function ($) {
         allWidth += $(window).outerWidth();
     });
 
-    console.log(allWidth);
+    window.adobeFlag = false;
+
+
     function onWheel(e) {
         e = e || window.event;
         var delta = e.deltaY || e.detail || e.wheelDelta;
@@ -98,6 +98,13 @@ jQuery(document).ready(function ($) {
             }
 
             pp.css('margin-left', -1 * scrollLeft + 'px');
+
+            if(window.adobeFlag === false) {
+                _satellite.track('trackInteraction',{contentType:'scroll',contentValue:'product banner',contentLocation:'product',contentAction:'horizontal'} );
+                window.adobeFlag = true;
+
+                console.log("yes");
+            }
 
         } else {
             if (scrollLeft <= 0) return;
@@ -199,11 +206,15 @@ jQuery(document).ready(function ($) {
     $('.video-hero').click(function () {
         $('.hero-content').remove();
         $('#video-hero-bg').attr('src', 'https://www.youtube.com/embed/OQ7Jr1oFAeg?&autoplay=1&loop=1&mute=1&playlist=OQ7Jr1oFAeg');
+
+        _satellite.track('trackInteraction', { contentType: 'video', contentValue: 'building factories', contentLocation: 'pfa', contentAction: 'play' });
     });
 
     $('.overlay-video-image').click(function () {
         $(this).removeClass('overlay-video-image');
         $('#slider-video').attr('src', 'https://www.youtube.com/embed/hzdAtYIIyWE?&autoplay=1&loop=1&mute=1');
+
+        _satellite.track('trackInteraction', { contentType: 'video', contentValue: 'steel to wheels', contentLocation: 'product', contentAction: 'play' });
     });
 
     // Adobe Track
@@ -217,21 +228,30 @@ jQuery(document).ready(function ($) {
             // Fire tracking event
             _satellite.track('trackInteraction', { contentType: 'scroll', contentValue: 'locations' });
 
-            console.log('test');
         }
     });
 
     $('.link-nissan-purpose').click(function (event) {
         event.preventDefault();
         var url = $(this).attr('href') + '?dcp=mfg.SUS.purpose.promo';
-        window.location.href = url;
+
+        _satellite.track('trackNavigation',{contentType:'link',contentValue:'nissan foundation and nissanneighbors',contentLocation:'purpose',destination:url} );
+
+        // window.location.href = url;
+        window.open(url, '_blank');
+
     });
 
     $('.link-product').click(function (event) {
         event.preventDefault();
-        var model = $('.product-list li.active').text().toLowerCase();
+        var contentValue = $(this).text().toLowerCase();
+        var model = $('.le-section-right.active .product-list li.active').text().toLowerCase();
         var url = $(this).attr('href') + '?dcp=mfg.' + model + '.BNP.loc.promo';
+
+        _satellite.track('trackNavigation', { contentType: 'link', contentValue: contentValue, contentLocation: 'locations', destination: url });
+
         window.open(url, '_blank');
+
     });
 
     $('.adobe-track').click(function () {
@@ -239,6 +259,7 @@ jQuery(document).ready(function ($) {
         var contentValue = $(this).data('content-value');
         var contentLocation = $(this).data('content-location');
         var contentAction = $(this).data('content-action');
+
         var data = { contentType: contentType, contentValue: contentValue, contentLocation: contentLocation }
 
         if (contentAction) {
@@ -247,13 +268,56 @@ jQuery(document).ready(function ($) {
 
         _satellite.track('trackInteraction ', data);
 
-
-        console.log(contentType);
-        console.log(contentValue);
-        console.log(contentLocation);
-        console.log(contentAction);
+    });
 
 
+    $('.adobe-track-loc').click(function () {
+        var contentType = $(this).data('content-type');
+        var contentValue = $(this).text().toLowerCase();
+        var contentLocation = $(this).data('content-location');
+        var destination = $(this).attr('href');
+
+        var data = { contentType: contentType, contentValue: contentValue, contentLocation: contentLocation }
+
+
+        if (destination) {
+            data.destination = destination;
+        }
+
+    });
+
+
+    $(document).on('click', '.product-container .slick-prev', function () {
+        _satellite.track('trackInteraction', { contentType: 'arrow', contentValue: 'model_carousel', contentLocation: 'locations', contentSelect: 'previous' });
+    })
+
+    $(document).on('click', '.product-container .slick-next', function () {
+        _satellite.track('trackInteraction', { contentType: 'arrow', contentValue: 'model_carousel', contentLocation: 'locations', contentSelect: 'next' });
+
+    })
+
+    $(document).on('click', '.section-slider .slick-prev', function () {
+        _satellite.track('trackInteraction', { contentType: 'arrow', contentValue: 'numbers_carousel', contentLocation: 'locations', contentSelect: 'previous' });
+    })
+
+    $(document).on('click', '.section-slider .slick-next', function () {
+        _satellite.track('trackInteraction', { contentType: 'arrow', contentValue: 'numbers_carousel', contentLocation: 'locations', contentSelect: 'next' });
+    })
+
+
+    $('.blocks-row .block-container').one('mouseenter', function () {
+        var contentValue = $(this).find('.block-title .title-h4').text().toLowerCase();
+        _satellite.track('trackInteraction', { contentType: 'hover', contentValue: contentValue, contentLocation: 'people' });
+    });
+
+    $('.section-slider-2 .pin-wrap').on('scroll', function () {
+        _satellite.track('trackInteraction', {
+            contentType: 'scroll',
+            contentValue: 'product banner',
+            contentLocation: 'product',
+            contentAction: 'horizontal'
+        });
+        console.log("product banner");
 
     });
 
