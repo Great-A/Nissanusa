@@ -79,6 +79,48 @@ jQuery(document).ready(function ($) {
         allWidth += $(window).outerWidth();
     });
 
+
+
+    var container = document.querySelector(".section-slider-2");
+    var startY, startTopScroll;
+
+    container.addEventListener("touchstart", function(event) {
+        startX = event.touches[0].clientX;        
+    }, false);
+
+    container.addEventListener("touchmove", function(event) {
+        var currentX = event.touches[0].clientX;
+        var distanceX = currentX - startX;
+        var step = distanceX / 8;
+
+        console.log(scrollLeft, allWidth);
+
+        if(startX > currentX + 5) {
+            console.log('delta> 0');
+            if (scrollLeft*-1 > allWidth) return;
+
+        } else {
+            console.log('delta <= 0');
+            if(scrollLeft> 0) return;
+        } 
+
+        if (scrollLeft + step > allWidth) {
+            scrollLeft = scrollLeft + (allWidth - scrollLeft);
+        } else {
+            scrollLeft = scrollLeft + step;
+        }
+
+        if(startX < currentX + 5) {
+             if(scrollLeft> 0) return;
+        }
+        // if ( ((allWidth - scrollLeft) + scrollLeft) >= 0 ) return;
+        pp.css('margin-left', 1 * scrollLeft + 'px');
+
+               
+        
+       
+    }, false);    
+
     window.adobeFlag = false;
 
 
