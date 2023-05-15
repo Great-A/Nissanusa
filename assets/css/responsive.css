@@ -67,6 +67,26 @@
   .slider-video {
     display: none;
   }
+  .section-slider-2 .slide {
+    padding: 0;
+  }
+  .section-slider-2 .slide .slide-wrapp {
+    display: flex;
+    align-items: center;
+  }
+  .section-slider-2 .slide .slider-content {
+    max-width: 90%;
+  }
+  .section-slider-2 .slide.slide-1 .h3-custom {
+    line-height: 60px;
+  }
+  .section-slider-2 .slide.slide-1 .slide-wrapp {
+    height: 100%;
+    padding: 28px 0;
+  }
+  .section-slider-2 .slide .img-round-wrapp {
+    display: none;
+  }
 }
 @media (min-width: 769px) {
   .section-round-img .container-img-round .info-wrapper {
@@ -167,7 +187,7 @@
     background: #8F0526;
   }
 }
-@media (min-width: 426px) and (max-width: 769px) {
+@media (min-width: 450px) and (max-width: 769px) {
   #manufacturing .blocks-wrapper {
     flex-direction: column;
   }
@@ -175,20 +195,24 @@
     flex-direction: row;
   }
   #manufacturing .image-wrapper {
-    max-width: 220px;
-    min-width: 220px;
+    max-width: 200px;
+    min-width: 200px;
     border-radius: 30px 0 0 30px;
   }
   #manufacturing .image-wrapper img {
-    min-width: 220px;
+    min-width: 200px;
     border-radius: 30px 0 0 30px;
   }
   #manufacturing .content-wrapper {
     height: 240px;
     border-radius: 0 30px 30px 0;
+    padding: 10px 15px;
+  }
+  .section-slider .slide-1 {
+    padding: 266px 50px 55px;
   }
 }
-@media (max-width: 426px) {
+@media (max-width: 450px) {
   .container {
     padding: 0 33px;
   }
@@ -235,7 +259,7 @@
   }
   .section-slider {
     margin: 0;
-    padding: 0 0 40px;
+    padding: 40px 0;
     background-color: #EFEFEF;
   }
   .section-slider .slick-list {
@@ -385,19 +409,6 @@
   }
   .pin-wrap {
     margin-left: 0;
-  }
-  .section-slider-2 .slide {
-    padding: 0;
-  }
-  .section-slider-2 .slide.slide-1 .h3-custom {
-    line-height: 60px;
-  }
-  .section-slider-2 .slide.slide-1 .slide-wrapp {
-    height: 100%;
-    padding: 28px 0;
-  }
-  .section-slider-2 .slide .img-round-wrapp {
-    display: none;
   }
   .h1-custom {
     line-height: 35px;

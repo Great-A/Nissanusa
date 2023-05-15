@@ -97,7 +97,7 @@ body #page {
   background-color: #8F0526;
 }
 .t-big {
-  font-size: 80px !important;
+  font-size: 50px !important;
 }
 .btn {
   position: relative;
@@ -1176,6 +1176,9 @@ body #page {
   margin-bottom: 43px;
 }
 .statistics .block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   width: 290px;
   padding: 50px 12px;
   background-color: #ffffff;
