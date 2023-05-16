@@ -1,23 +1,5 @@
 jQuery(document).ready(function ($) {
 
-    // Fancybox.bind(".hero-play", {
-    //     Video: {
-    //         close: {
-    //             type: "button",
-    //             label: "CLOSE",
-    //             class: "fancybox__button--close",
-    //             html: '<svg width="42" height="42" viewBox="0 0 21 16" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4.13599" y="-0.485291" width="21" height="3" rx="1.5" transform="rotate(45 4.13599 -0.485291)" fill="#FFFAEF" /><rect x="18.9707" y="1.63605" width="21" height="3" rx="1.5" transform="rotate(135 18.9707 1.63605)" fill="#FFFAEF" /></svg>',
-    //             tabindex: 1,
-    //             click: function (event) {
-    //                 event.stopPropagation();
-    //                 event.preventDefault();
-
-    //                 this.fancybox.close();
-    //             }
-    //         }
-    //     }
-    // });
-
     $('.slick-slider').slick({
         dots: true,
         responsive: [
@@ -81,50 +63,50 @@ jQuery(document).ready(function ($) {
 
 
 
-    var container = document.querySelector(".section-slider-2");
-    var startY, startTopScroll;
+    // var container = document.querySelector(".section-slider-2");
+    // var startY, startTopScroll;
 
-    container.addEventListener("touchstart", function(event) {
-        startX = event.touches[0].clientX;        
-    }, false);
+    // container.addEventListener("touchstart", function(event) {
+    //     startX = event.touches[0].clientX;        
+    // }, false);
 
-    container.addEventListener("touchmove", function(event) {
-        var currentX = event.touches[0].clientX;
-        var distanceX = currentX - startX;
-        var step = distanceX / 8;
+    // container.addEventListener("touchmove", function(event) {
+    //     var currentX = event.touches[0].clientX;
+    //     var distanceX = currentX - startX;
+    //     var step = distanceX / 8;
 
-        console.log(scrollLeft, allWidth);
+    //     console.log(scrollLeft, allWidth);
 
-        if(startX > currentX + 5) {
-            console.log('delta> 0');
-            if (scrollLeft*-1 > allWidth) return;
+    //     if(startX > currentX + 5) {
+    //         console.log('delta> 0');
+    //         if (scrollLeft*-1 > allWidth) return;
 
-        } else {
-            console.log('delta <= 0');
-            if(scrollLeft> 0) return;
-        } 
+    //     } else {
+    //         console.log('delta <= 0');
+    //         if(scrollLeft> 0) return;
+    //     } 
 
-        if (scrollLeft + step > allWidth) {
-            scrollLeft = scrollLeft + (allWidth - scrollLeft);
-        } else {
-            scrollLeft = scrollLeft + step;
-        }
+    //     if (scrollLeft + step > allWidth) {
+    //         scrollLeft = scrollLeft + (allWidth - scrollLeft);
+    //     } else {
+    //         scrollLeft = scrollLeft + step;
+    //     }
 
-        if(startX < currentX + 5) {
-             if(scrollLeft> 0) return;
-        }
-        // if ( ((allWidth - scrollLeft) + scrollLeft) >= 0 ) return;
-        pp.css('margin-left', 1 * scrollLeft + 'px');
+    //     if(startX < currentX + 5) {
+    //          if(scrollLeft> 0) return;
+    //     }
+    //     // if ( ((allWidth - scrollLeft) + scrollLeft) >= 0 ) return;
+    //     pp.css('margin-left', 1 * scrollLeft + 'px');
 
                
         
        
-    }, false);    
+    // }, false);    
 
     window.adobeFlag = false;
 
 
-    function onWheel(e) {
+    function onWheel2(e) {
         e = e || window.event;
         var delta = e.deltaY || e.detail || e.wheelDelta;
         var el = pp[0];
@@ -157,7 +139,7 @@ jQuery(document).ready(function ($) {
         e.preventDefault ? e.preventDefault() : (e.returnValue = false);
     }
 
-    function onWheelBack(e) {
+    function onWheel(e) {
         e = e || window.event;
         var delta = e.deltaY || e.detail || e.wheelDelta;
         var el = pp[0];

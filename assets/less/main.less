@@ -110,36 +110,55 @@
 
     .overlay {
         position: absolute;
+        background-color: #00000020;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        z-index: 0;
+        z-index: 1;
     }
 
     .video-hero {
         position: relative;
+        max-width: 835px;
+        max-height: 468px;
+        margin: auto;
     }
-
 
     #video-hero-bg {
         width: 100%;
-        height: 550px
+        height: 468px
+    }
+
+    video {
+        position: absolute;
+        width: 100%;
+        height: 468px;
     }
 
     .hero-content {
+        cursor: pointer;
         color: @white;
-        background-color: @dark-red;
+       
+        // &:before {
+        //     content: '';
+        //     position: absolute;
+        //     background: url('../img/play-video.svg') no-repeat;
+        //     width: 77px;
+        //     height: 77px;
+        //     top: 50%;
+        //     left: 50%;
+        //     transform: translate(-50%; -50%);
+        //     cursor: pointer;
+        // }
 
         &:before {
             content: '';
             position: absolute;
-            background: url('../img/play-video.svg') no-repeat;
-            width: 77px;
-            height: 77px;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%; -50%);
+
+
+            top: 0;
+            left: 0;
             cursor: pointer;
         }
 
@@ -366,7 +385,7 @@
 
         .slide {
             img {
-                height: 260px;
+                height: 148px;
                 object-fit: contain;
                 margin: auto;
             }
@@ -1396,6 +1415,12 @@
     left: 0;
     transition: all 0.3s;
     margin-bottom: -17px;
+    display: flex;
+    position: relative;
+    flex-shrink: 0;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
 
     .subtitle {
         font-size: 20px;

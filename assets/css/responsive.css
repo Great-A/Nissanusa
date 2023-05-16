@@ -1,3 +1,10 @@
+@media (min-width: 1200px) {
+  .pin-wrap {
+    padding: 204px 0 130px;
+    margin-top: -205px;
+    margin-bottom: -164px;
+  }
+}
 @media all and (max-width: 1199px) {
   .statistics .block-img .img-col {
     justify-content: center;
@@ -105,9 +112,6 @@
   .hero-section .hero-content .hero-title {
     font-size: 42px;
     line-height: 45px;
-  }
-  .hero-section #video-hero-bg {
-    height: 250px;
   }
   .location-explore-wrapper {
     width: auto;
@@ -401,5 +405,11 @@
   }
   .h1-custom {
     line-height: 35px;
+  }
+  .hero-section video {
+    height: 235px;
+  }
+  .hero-section #video-hero-bg {
+    height: 225px;
   }
 }
