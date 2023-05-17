@@ -228,7 +228,7 @@ jQuery(document).ready(function ($) {
 
 
     $('.video-hero').click(function () {
-        $('.hero-content').remove();
+        $('.hero-content, .video-hero video').remove();
         $('#video-hero-bg').attr('src', 'https://www.youtube.com/embed/OQ7Jr1oFAeg?&autoplay=1&loop=1&mute=1&playlist=OQ7Jr1oFAeg');
 
         _satellite.track('trackInteraction', { contentType: 'video', contentValue: 'building factories', contentLocation: 'pfa', contentAction: 'play' });
