@@ -61,48 +61,6 @@ jQuery(document).ready(function ($) {
         allWidth += $(window).outerWidth();
     });
 
-
-
-    // var container = document.querySelector(".section-slider-2");
-    // var startY, startTopScroll;
-
-    // container.addEventListener("touchstart", function(event) {
-    //     startX = event.touches[0].clientX;        
-    // }, false);
-
-    // container.addEventListener("touchmove", function(event) {
-    //     var currentX = event.touches[0].clientX;
-    //     var distanceX = currentX - startX;
-    //     var step = distanceX / 8;
-
-    //     console.log(scrollLeft, allWidth);
-
-    //     if(startX > currentX + 5) {
-    //         console.log('delta> 0');
-    //         if (scrollLeft*-1 > allWidth) return;
-
-    //     } else {
-    //         console.log('delta <= 0');
-    //         if(scrollLeft> 0) return;
-    //     } 
-
-    //     if (scrollLeft + step > allWidth) {
-    //         scrollLeft = scrollLeft + (allWidth - scrollLeft);
-    //     } else {
-    //         scrollLeft = scrollLeft + step;
-    //     }
-
-    //     if(startX < currentX + 5) {
-    //          if(scrollLeft> 0) return;
-    //     }
-    //     // if ( ((allWidth - scrollLeft) + scrollLeft) >= 0 ) return;
-    //     pp.css('margin-left', 1 * scrollLeft + 'px');
-
-               
-        
-       
-    // }, false);    
-
     window.adobeFlag = false;
 
 
@@ -123,11 +81,10 @@ jQuery(document).ready(function ($) {
 
             pp.css('margin-left', -1 * scrollLeft + 'px');
 
-            if(window.adobeFlag === false) {
-                _satellite.track('trackInteraction',{contentType:'scroll',contentValue:'product banner',contentLocation:'product',contentAction:'horizontal'} );
+            if (window.adobeFlag === false) {
+                _satellite.track('trackInteraction', { contentType: 'scroll', contentValue: 'product banner', contentLocation: 'product', contentAction: 'horizontal' });
                 window.adobeFlag = true;
 
-                console.log("yes");
             }
 
         } else {
@@ -219,39 +176,128 @@ jQuery(document).ready(function ($) {
 
                 $menu.find("a[href='#" + currentId + "']").addClass("active");
 
-
-                _satellite.track('trackInteraction', { contentType: 'scroll', contentValue: currentId });// Add the following line to track the scroll event
-
             }
         });
     });
 
 
+    var tag = document.createElement('script');
+
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+
     $('.video-hero').click(function () {
         $('.hero-content, .video-hero video').remove();
-        $('#video-hero-bg').attr('src', 'https://www.youtube.com/embed/OQ7Jr1oFAeg?&autoplay=1&loop=1&mute=1&playlist=OQ7Jr1oFAeg');
 
         _satellite.track('trackInteraction', { contentType: 'video', contentValue: 'building factories', contentLocation: 'pfa', contentAction: 'play' });
+
+
+        // Create a new player object
+        var player = new YT.Player('video-hero-bg', {
+            height: '315',
+            width: '560',
+            videoId: 'OQ7Jr1oFAeg',
+            events: {
+                'onReady': onPlayerReady,
+                'onStateChange': onPlayerStateChange
+            }
+        });
+
+        function onPlayerReady(event) {
+            event.target.playVideo();
+            event.target.mute();
+        }
+
+        // This function will be called when the player's state changes
+        var done = false;
+        function onPlayerStateChange(event) {
+            if (event.data == YT.PlayerState.ENDED) {
+
+                _satellite.track('trackInteraction', { contentType: 'video', contentValue: 'building factories', contentLocation: 'pfa', contentAction: 'complete' });
+                // event.target.seekTo(0);
+                // event.target.playVideo();
+                done = true;
+            }
+        }
     });
+
+
 
     $('.overlay-video-image').click(function () {
+        // Remove the "overlay-video-image" class to show the video
         $(this).removeClass('overlay-video-image');
-        $('#slider-video').attr('src', 'https://www.youtube.com/embed/hzdAtYIIyWE?&autoplay=1&loop=1&mute=1');
-
-        _satellite.track('trackInteraction', { contentType: 'video', contentValue: 'steel to wheels', contentLocation: 'product', contentAction: 'play' });
-    });
+      
+        // Create a new player object
+        var player = new YT.Player('slider-video', {
+          height: '270',
+          width: '500',
+          videoId: 'hzdAtYIIyWE',
+          events: {
+            'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange
+          }
+        });
+      
+        // This function will be called when the player is ready
+        function onPlayerReady(event) {
+          // Autoplay the video
+          event.target.playVideo();
+      
+          // Mute the video
+          event.target.mute();
+      
+          // Track an interaction using Adobe's Satellite tool
+          _satellite.track('trackInteraction', { contentType: 'video', contentValue: 'steel to wheels', contentLocation: 'product', contentAction: 'play' });
+        }
+      
+        // This function will be called when the player's state changes
+        function onPlayerStateChange(event) {
+          if (event.data == YT.PlayerState.ENDED) {
+            // Track a complete event using Adobe's Satellite tool
+            _satellite.track('trackInteraction', { contentType: 'video', contentValue: 'steel to wheels', contentLocation: 'product', contentAction: 'complete' });
+          }
+        }
+      });
 
     // Adobe Track
+
+    var locationFired = false;
+    var peopleFired = false;
+    var productFired = false;
+    var purposeFired = false;
 
     $(window).scroll(function () {
         var scrollTop = $(this).scrollTop();
         var locationsTop = $('#location-main-section').offset().top;
         var locationsHeight = $('#location-main-section').outerHeight();
+        var locationsTopPeople = $('#people').offset().top;
+        var locationsHeightPeople = $('#people').outerHeight();
+        var locationsTopProduct = $('#product').offset().top;
+        var locationsHeightProduct = $('#product').outerHeight();
+        var locationsTopPurpose = $('#purpose').offset().top;
+        var locationsHeightPurpose = $('#purpose').outerHeight();
 
-        if (scrollTop >= locationsTop && scrollTop < locationsTop + locationsHeight) {
+        if (scrollTop >= locationsTop && scrollTop < locationsTop + locationsHeight && !locationFired) {
             // Fire tracking event
             _satellite.track('trackInteraction', { contentType: 'scroll', contentValue: 'locations' });
+            locationFired = true;
+        }
 
+        if (scrollTop >= locationsTopPeople && scrollTop < locationsTopPeople + locationsHeightPeople && !peopleFired) {
+            _satellite.track('trackInteraction', { contentType: 'scroll', contentValue: 'people' });
+            peopleFired = true;
+        }
+
+        if (scrollTop >= locationsTopProduct && scrollTop < locationsTopProduct + locationsHeightProduct && !productFired) {
+            _satellite.track('trackInteraction', { contentType: 'scroll', contentValue: 'product' });
+            productFired = true;
+        }
+
+        if (scrollTop >= locationsTopPurpose && scrollTop < locationsTopPurpose + locationsHeightPurpose && !purposeFired) {
+            _satellite.track('trackInteraction', { contentType: 'scroll', contentValue: 'purpose' });
+            purposeFired = true;
         }
     });
 
@@ -259,9 +305,8 @@ jQuery(document).ready(function ($) {
         event.preventDefault();
         var url = $(this).attr('href') + '?dcp=mfg.SUS.purpose.promo';
 
-        _satellite.track('trackNavigation',{contentType:'link',contentValue:'nissan foundation and nissanneighbors',contentLocation:'purpose',destination:url} );
+        _satellite.track('trackNavigation', { contentType: 'link', contentValue: 'nissan foundation and nissanneighbors', contentLocation: 'purpose', destination: url });
 
-        // window.location.href = url;
         window.open(url, '_blank');
 
     });
@@ -334,15 +379,18 @@ jQuery(document).ready(function ($) {
         _satellite.track('trackInteraction', { contentType: 'hover', contentValue: contentValue, contentLocation: 'people' });
     });
 
-    $('.section-slider-2 .pin-wrap').on('scroll', function () {
-        _satellite.track('trackInteraction', {
-            contentType: 'scroll',
-            contentValue: 'product banner',
-            contentLocation: 'product',
-            contentAction: 'horizontal'
-        });
-        console.log("product banner");
+    var bannerFired = false;
 
+    $('.section-slider-2 .pin-wrap').on('scroll', function () {
+        if (!bannerFired) {
+            _satellite.track('trackInteraction', {
+                contentType: 'scroll',
+                contentValue: 'product banner',
+                contentLocation: 'product',
+                contentAction: 'horizontal'
+            });
+            bannerFired = true;
+        }
     });
 
     // End Adobe Track
