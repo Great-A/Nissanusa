@@ -1239,6 +1239,9 @@ body #page {
   width: 100vw;
   flex-shrink: 0;
 }
+.pin-wrap .mob {
+  display: none;
+}
 .pin-wrap::-webkit-scrollbar {
   width: 1px;
 }
